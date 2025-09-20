@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "osmiumsmagic:mana_ring_tier_one",
+    "osmiumsmagic:mana_ring_tier_two",
+    "osmiumsmagic:mana_ring_tier_three",
+    "osmiumsmagic:mana_ring_tier_four",
+    "osmiumsmagic:mana_ring_tier_five"
+
+  ]
+}
