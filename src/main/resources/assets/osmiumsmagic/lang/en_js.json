@@ -9,6 +9,26 @@
 
   "item.osmiumsmagic.mana_ring_tier_four": "Ring of Mana(Tier Ⅳ)",
 
-  "item.osmiumsmagic.mana_ring_tier_five": "Ring of Mana(Tier Ⅴ)"
+  "item.osmiumsmagic.mana_ring_tier_five": "Ring of Mana(Tier Ⅴ)",
+
+  "item.osmiumsmagic.cooldown_ring_tier_one": "Ring of Recovery(Tier Ⅰ)",
+
+  "item.osmiumsmagic.cooldown_ring_tier_two": "Ring of Recovery(Tier Ⅱ)",
+
+  "item.osmiumsmagic.cooldown_ring_tier_thre": "Ring of Recovery(Tier Ⅲ)",
+
+  "item.osmiumsmagic.cooldown_ring_tier_four": "Ring of Recovery(Tier Ⅳ)",
+
+  "item.osmiumsmagic.cooldown_ring_tier_five": "Ring of Recovery(Tier Ⅴ)",
+
+  "item.osmiumsmagic.cast_time_ring_tier_one": "Ring of Expediency(Tier Ⅰ)",
+
+  "item.osmiumsmagic.cast_time_ring_tier_two": "Ring of Expediency(Tier Ⅱ)",
+
+  "item.osmiumsmagic.cast_time_ring_tier_three": "Ring of Expediency(Tier Ⅲ)",
+
+  "item.osmiumsmagic.cast_time_ring_tier_four": "Ring of Expediency(Tier Ⅳ)",
+
+  "item.osmiumsmagic.cast_time_ring_tier_five": "Ring of Expediency(Tier Ⅴ)"
 
 }

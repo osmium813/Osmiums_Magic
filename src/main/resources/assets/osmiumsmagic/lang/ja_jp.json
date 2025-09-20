@@ -9,5 +9,27 @@
 
   "item.osmiumsmagic.mana_ring_tier_four": "マナのリング(Tier Ⅳ)",
 
-  "item.osmiumsmagic.mana_ring_tier_five": "マナのリング(Tier Ⅴ)"
+  "item.osmiumsmagic.mana_ring_tier_five": "マナのリング(Tier Ⅴ)",
+
+  "item.osmiumsmagic.mana_ring_tier_five": "Ring of Mana(Tier Ⅴ)",
+
+  "item.osmiumsmagic.cooldown_ring_tier_one": "回復のリング(Tier Ⅰ)",
+
+  "item.osmiumsmagic.cooldown_ring_tier_two": "回復のリング(Tier Ⅱ)",
+
+  "item.osmiumsmagic.cooldown_ring_tier_thre": "回復のリング(Tier Ⅲ)",
+
+  "item.osmiumsmagic.cooldown_ring_tier_four": "回復のリング(Tier Ⅳ)",
+
+  "item.osmiumsmagic.cooldown_ring_tier_five": "回復のリング(Tier Ⅴ)",
+
+  "item.osmiumsmagic.cast_time_ring_tier_one": "利便のリング(Tier Ⅰ)",
+
+  "item.osmiumsmagic.cast_time_ring_tier_two": "利便のリング(Tier Ⅱ)",
+
+  "item.osmiumsmagic.cast_time_ring_tier_three": "利便のリング(Tier Ⅲ)",
+
+  "item.osmiumsmagic.cast_time_ring_tier_four": "利便のリング(Tier Ⅳ)",
+
+  "item.osmiumsmagic.cast_time_ring_tier_five": "利便のリング(Tier Ⅴ)"
 }
