@@ -1,5 +1,15 @@
 {
   "replace": false,
   "values": [
+    "osmiumsmagic:cooldown_ring_tier_one",
+    "osmiumsmagic:cooldown_ring_tier_two",
+    "osmiumsmagic:cooldown_ring_tier_three",
+    "osmiumsmagic:cooldown_ring_tier_four",
+    "osmiumsmagic:cooldown_ring_tier_five",
+    "osmiumsmagic:cast_time_ring_tier_one",
+    "osmiumsmagic:cast_time_ring_tier_two",
+    "osmiumsmagic:cast_time_ring_tier_three",
+    "osmiumsmagic:cast_time_ring_tier_four",
+    "osmiumsmagic:cast_time_ring_tier_five"
   ]
 }
