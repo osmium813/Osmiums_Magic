@@ -20,6 +20,7 @@ public class OsmiumsmagicMain {
             ModItems.CAST_TIME_RING_TIER_TWO.get(),
             ModItems.CAST_TIME_RING_TIER_THREE.get(),
             ModItems.CAST_TIME_RING_TIER_FOUR.get(),
-            ModItems.CAST_TIME_RING_TIER_FIVE.get()
+            ModItems.CAST_TIME_RING_TIER_FIVE.get(),
+            ModItems.DOUBLE_RING.get()
     };
 }

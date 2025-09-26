@@ -1,5 +1,6 @@
 package com.Osmium.OsmiumsMagic.Main;
 
+import com.Osmium.OsmiumsMagic.inventory.menu.ModMenuTypes;
 import com.Osmium.OsmiumsMagic.regi.ModBlocks;
 import com.Osmium.OsmiumsMagic.regi.ModItems;
 import com.Osmium.OsmiumsMagic.regi.tab.OsmiumsmagicTabs;
@@ -19,5 +20,7 @@ public class Osmiumsmagic {
         ModBlocks.register(bus);
 
         OsmiumsmagicTabs.MOD_TABS.register(bus);
+
+        ModMenuTypes.resister(bus);
     }
 }
