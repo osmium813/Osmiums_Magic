@@ -5,7 +5,18 @@
     "osmiumsmagic:mana_ring_tier_two",
     "osmiumsmagic:mana_ring_tier_three",
     "osmiumsmagic:mana_ring_tier_four",
-    "osmiumsmagic:mana_ring_tier_five"
+    "osmiumsmagic:mana_ring_tier_five",
+    "osmiumsmagic:cool_down_ring_tier_one",
+    "osmiumsmagic:cool_down_ring_tier_two",
+    "osmiumsmagic:cool_down_ring_tier_three",
+    "osmiumsmagic:cool_down_ring_tier_four",
+    "osmiumsmagic:cool_down_ring_tier_five",
+    "osmiumsmagic:cast_time_ring_tier_one",
+    "osmiumsmagic:cast_time_ring_tier_two",
+    "osmiumsmagic:cast_time_ring_tier_three",
+    "osmiumsmagic:cast_time_ring_tier_four",
+    "osmiumsmagic:cast_time_ring_tier_five",
+    "osmiumsmagic:double_ring"
 
   ]
 }
