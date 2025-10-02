@@ -23,6 +23,16 @@ public class ModItemModelProvider extends ItemModelProvider {
         curioItem(ModItems.MANA_RING_TIER_THREE);
         curioItem(ModItems.MANA_RING_TIER_FOUR);
         curioItem(ModItems.MANA_RING_TIER_FIVE);
+        curioItem(ModItems.CAST_TIME_RING_TIER_ONE);
+        curioItem(ModItems.CAST_TIME_RING_TIER_TWO);
+        curioItem(ModItems.CAST_TIME_RING_TIER_THREE);
+        curioItem(ModItems.CAST_TIME_RING_TIER_FOUR);
+        curioItem(ModItems.CAST_TIME_RING_TIER_FIVE);
+        curioItem(ModItems.COOLDOWN_RING_TIER_ONE);
+        curioItem(ModItems.COOLDOWN_RING_TIER_TWO);
+        curioItem(ModItems.COOLDOWN_RING_TIER_THREE);
+        curioItem(ModItems.COOLDOWN_RING_TIER_FOUR);
+        curioItem(ModItems.COOLDOWN_RING_TIER_FIVE);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
