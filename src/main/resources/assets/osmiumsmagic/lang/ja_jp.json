@@ -33,5 +33,7 @@
 
   "item.osmiumsmagic.cast_time_ring_tier_five": "利便のリング(Tier Ⅴ)",
 
-  "item.osmiumsmagic.double_ring": "二重のリング"
+  "item.osmiumsmagic.double_ring": "二重のリング",
+
+  "screen.osmiumsmagic.double_ring" : "二重のリング　メニュ＝"
 }

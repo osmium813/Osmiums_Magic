@@ -31,6 +31,8 @@
 
   "item.osmiumsmagic.cast_time_ring_tier_five": "Ring of Expediency(Tier Ⅴ)",
 
-  "item.osmiumsmagic.double_ring": "Double Ring"
+  "item.osmiumsmagic.double_ring": "Double Ring",
+
+  "screen.osmiumsmagic.double_ring" : "Double Ring Menu"
 
 }
