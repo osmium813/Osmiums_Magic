@@ -33,6 +33,8 @@
 
   "item.osmiumsmagic.double_ring": "Double Ring",
 
-  "screen.osmiumsmagic.double_ring" : "Double Ring Menu"
+  "screen.osmiumsmagic.double_ring" : "Double Ring Menu",
+
+  "tooltip.osmiumsmagic.ring" : "Ring"
 
 }
