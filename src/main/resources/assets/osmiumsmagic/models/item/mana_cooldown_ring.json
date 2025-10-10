@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "osmiumsmagic:item/double_ring"
+    "layer0": "osmiumsmagic:item/mana_cooldown_ring"
   }
 }

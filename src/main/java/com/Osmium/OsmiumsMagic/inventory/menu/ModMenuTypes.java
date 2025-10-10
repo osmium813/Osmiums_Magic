@@ -15,9 +15,6 @@ public class ModMenuTypes {
     public static final DeferredRegister<MenuType<?>> MENUS =
             DeferredRegister.create(ForgeRegistries.MENU_TYPES, Osmiumsmagic.MOD_ID);
 
-    public static final RegistryObject<MenuType<DoubleRingMenu>> DOUBLE_RING_MENU =
-            registerMenuType("double_ring_meni", DoubleRingMenu::new);
-
     private static <T extends AbstractContainerMenu>RegistryObject<MenuType<T>> registerMenuType(String name, IContainerFactory<T> factory) {
         return MENUS.register(name, () -> IForgeMenuType.create(factory));
     }

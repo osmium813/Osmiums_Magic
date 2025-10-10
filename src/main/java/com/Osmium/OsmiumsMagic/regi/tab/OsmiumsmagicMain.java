@@ -21,6 +21,11 @@ public class OsmiumsmagicMain {
             ModItems.CAST_TIME_RING_TIER_THREE.get(),
             ModItems.CAST_TIME_RING_TIER_FOUR.get(),
             ModItems.CAST_TIME_RING_TIER_FIVE.get(),
-            ModItems.DOUBLE_RING.get()
+            ModItems.MANA_COOLDOWN_RING.get(),
+            ModItems.MANA_COOLDOWN_RING_TIER_ONE.get(),
+            ModItems.MANA_COOLDOWN_RING_TIER_TWO.get(),
+            ModItems.MANA_COOLDOWN_RING_TIER_THREE.get(),
+            ModItems.MANA_COOLDOWN_RING_TIER_FOUR.get(),
+            ModItems.MANA_COOLDOWN_RING_TIER_FIVE.get()
     };
 }

@@ -16,6 +16,7 @@
     "osmiumsmagic:cast_time_ring_tier_three",
     "osmiumsmagic:cast_time_ring_tier_four",
     "osmiumsmagic:cast_time_ring_tier_five",
-    "osmiumsmagic:double_ring"
+    "osmiumsmagic:double_ring",
+    "osmiumsmagic:mana_cooldown_ring"
   ]
 }

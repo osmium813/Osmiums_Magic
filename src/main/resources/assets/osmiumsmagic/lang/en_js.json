@@ -31,10 +31,16 @@
 
   "item.osmiumsmagic.cast_time_ring_tier_five": "Ring of Expediency(Tier Ⅴ)",
 
-  "item.osmiumsmagic.double_ring": "Double Ring",
+  "osmiumsmagic:mana_cooldown_ring": "Ring of Mana and Recovery",
 
-  "screen.osmiumsmagic.double_ring" : "Double Ring Menu",
+  "osmiumsmagic:mana_cooldown_ring_tier_one": "Ring of Mana and Recovery(Tier Ⅰ)",
 
-  "tooltip.osmiumsmagic.ring" : "Ring"
+  "osmiumsmagic:mana_cooldown_ring_tier_two": "Ring of Mana and Recovery(Tier Ⅱ)",
+
+  "osmiumsmagic:mana_cooldown_ring_tier_three": "Ring of Mana and Recovery(Tier Ⅲ)",
+
+  "osmiumsmagic:mana_cooldown_ring_tier_four": "Ring of Mana and Recovery(Tier Ⅳ)",
+
+  "osmiumsmagic:mana_cooldown_ring_tier_five": "Ring of Mana and Recovery(Tier Ⅴ)"
 
 }
