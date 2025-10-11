@@ -2,6 +2,7 @@ package com.Osmium.OsmiumsMagic.regi;
 
 import com.Osmium.OsmiumsMagic.Main.Osmiumsmagic;
 import com.Osmium.OsmiumsMagic.curios.DoubleAttributeCurio;
+import com.Osmium.OsmiumsMagic.curios.TripleAttributeCurio;
 import com.Osmium.OsmiumsMagic.rarity.ModRarity;
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.item.curios.CurioBaseItem;
@@ -80,5 +81,24 @@ public class ModItems {
             AttributeRegistry.CAST_TIME_REDUCTION.get(),  new AttributeModifier("ct", 0.35, AttributeModifier.Operation.MULTIPLY_BASE)));
     public static final RegistryObject<CurioBaseItem> COOLDOWN_CAST_TIME_RING_TIER_FIVE = ITEMS.register("cooldown_cast_time_ring_tier_five", () -> new DoubleAttributeCurio(ItemPropertiesHelper.equipment().stacksTo(1).rarity(ModRarity.LEGENDARY), AttributeRegistry.COOLDOWN_REDUCTION.get(), new AttributeModifier("cd", 0.4, AttributeModifier.Operation.MULTIPLY_BASE),
             AttributeRegistry.CAST_TIME_REDUCTION.get(),  new AttributeModifier("ct", 0.4, AttributeModifier.Operation.MULTIPLY_BASE)));
+
+    public static final RegistryObject<CurioBaseItem> MANA_COOLDOWN_CAST_TIME_RING = ITEMS.register("mana_cooldown_cast_time_ring", () -> new TripleAttributeCurio(ItemPropertiesHelper.equipment().stacksTo(1), AttributeRegistry.MAX_MANA.get(), new AttributeModifier("mana", 100, AttributeModifier.Operation.ADDITION),
+            AttributeRegistry.COOLDOWN_REDUCTION.get(),  new AttributeModifier("cd", 0.15, AttributeModifier.Operation.MULTIPLY_BASE), AttributeRegistry.CAST_TIME_REDUCTION.get(), new AttributeModifier("ct", 0.15, AttributeModifier.Operation.MULTIPLY_BASE))
+    );
+    public static final RegistryObject<CurioBaseItem> MANA_COOLDOWN_CAST_TIME_RING_TIER_ONE = ITEMS.register("mana_cooldown_cast_time_ring_tier_one", () -> new TripleAttributeCurio(ItemPropertiesHelper.equipment().stacksTo(1), AttributeRegistry.MAX_MANA.get(), new AttributeModifier("mana", 200, AttributeModifier.Operation.ADDITION),
+            AttributeRegistry.COOLDOWN_REDUCTION.get(),  new AttributeModifier("cd", 0.2, AttributeModifier.Operation.MULTIPLY_BASE), AttributeRegistry.CAST_TIME_REDUCTION.get(), new AttributeModifier("ct", 0.2, AttributeModifier.Operation.MULTIPLY_BASE))
+    );
+    public static final RegistryObject<CurioBaseItem> MANA_COOLDOWN_CAST_TIME_RING_TIER_TWO = ITEMS.register("mana_cooldown_cast_time_ring_tier_two", () -> new TripleAttributeCurio(ItemPropertiesHelper.equipment().stacksTo(1), AttributeRegistry.MAX_MANA.get(), new AttributeModifier("mana", 300, AttributeModifier.Operation.ADDITION),
+            AttributeRegistry.COOLDOWN_REDUCTION.get(),  new AttributeModifier("cd", 0.25, AttributeModifier.Operation.MULTIPLY_BASE), AttributeRegistry.CAST_TIME_REDUCTION.get(), new AttributeModifier("ct", 0.25, AttributeModifier.Operation.MULTIPLY_BASE))
+    );
+    public static final RegistryObject<CurioBaseItem> MANA_COOLDOWN_CAST_TIME_RING_TIER_THREE = ITEMS.register("mana_cooldown_cast_time_ring_tier_three", () -> new TripleAttributeCurio(ItemPropertiesHelper.equipment().stacksTo(1), AttributeRegistry.MAX_MANA.get(), new AttributeModifier("mana", 400, AttributeModifier.Operation.ADDITION),
+            AttributeRegistry.COOLDOWN_REDUCTION.get(),  new AttributeModifier("cd", 0.3, AttributeModifier.Operation.MULTIPLY_BASE), AttributeRegistry.CAST_TIME_REDUCTION.get(), new AttributeModifier("ct", 0.3, AttributeModifier.Operation.MULTIPLY_BASE))
+    );
+    public static final RegistryObject<CurioBaseItem> MANA_COOLDOWN_CAST_TIME_RING_TIER_FOUR = ITEMS.register("mana_cooldown_cast_time_ring_tier_four", () -> new TripleAttributeCurio(ItemPropertiesHelper.equipment().stacksTo(1), AttributeRegistry.MAX_MANA.get(), new AttributeModifier("mana", 500, AttributeModifier.Operation.ADDITION),
+            AttributeRegistry.COOLDOWN_REDUCTION.get(),  new AttributeModifier("cd", 0.35, AttributeModifier.Operation.MULTIPLY_BASE), AttributeRegistry.CAST_TIME_REDUCTION.get(), new AttributeModifier("ct", 0.35, AttributeModifier.Operation.MULTIPLY_BASE))
+    );
+    public static final RegistryObject<CurioBaseItem> MANA_COOLDOWN_CAST_TIME_RING_TIER_FIVE = ITEMS.register("mana_cooldown_cast_time_ring_tier_five", () -> new TripleAttributeCurio(ItemPropertiesHelper.equipment().stacksTo(1), AttributeRegistry.MAX_MANA.get(), new AttributeModifier("mana", 600, AttributeModifier.Operation.ADDITION),
+            AttributeRegistry.COOLDOWN_REDUCTION.get(),  new AttributeModifier("cd", 0.4, AttributeModifier.Operation.MULTIPLY_BASE), AttributeRegistry.CAST_TIME_REDUCTION.get(), new AttributeModifier("ct", 0.4, AttributeModifier.Operation.MULTIPLY_BASE))
+    );
 
 }

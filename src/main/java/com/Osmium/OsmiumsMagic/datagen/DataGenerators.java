@@ -29,5 +29,8 @@ public class DataGenerators {
         generator.addProvider(event.includeClient(), new ModEnUsLangProvider(packOutput, "en_us"));
         generator.addProvider(event.includeClient(), new ModJAJPLangProvider(packOutput, "ja_jp"));
 
+        ModBlockTagGenerator blockTagGenerator = generator.addProvider(event.includeServer(),
+                new ModBlockTagGenerator(packOutput, lookupProvider, existingFileHelper));
+        generator.addProvider(event.includeServer(), new ModItemTagGenerator(packOutput, lookupProvider, blockTagGenerator.contentsGetter(), existingFileHelper));
     }
 }

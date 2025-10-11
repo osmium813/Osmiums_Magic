@@ -51,5 +51,12 @@ public class ModEnUsLangProvider extends LanguageProvider {
         addItem(ModItems.COOLDOWN_CAST_TIME_RING_TIER_THREE, "Ring of Recovery and Expediency(Tier Ⅲ)");
         addItem(ModItems.COOLDOWN_CAST_TIME_RING_TIER_FOUR, "Ring of Recovery and Expediency(Tier Ⅳ)");
         addItem(ModItems.COOLDOWN_CAST_TIME_RING_TIER_FIVE, "Ring of Recovery and Expediency(Tier Ⅴ)");
+
+        addItem(ModItems.MANA_COOLDOWN_CAST_TIME_RING, "Ring of Mana, Recovery and Expediency");
+        addItem(ModItems.MANA_COOLDOWN_CAST_TIME_RING_TIER_ONE, "Ring of Mana, Recovery and Expediency(Tier Ⅰ)");
+        addItem(ModItems.MANA_COOLDOWN_CAST_TIME_RING_TIER_TWO, "Ring of Mana, Recovery and Expediency(Tier Ⅱ)");
+        addItem(ModItems.MANA_COOLDOWN_CAST_TIME_RING_TIER_THREE, "Ring of Mana, Recovery and Expediency(Tier Ⅲ)");
+        addItem(ModItems.MANA_COOLDOWN_CAST_TIME_RING_TIER_FOUR, "Ring of Mana, Recovery and Expediency(Tier Ⅳ)");
+        addItem(ModItems.MANA_COOLDOWN_CAST_TIME_RING_TIER_FIVE, "Ring of Mana, Recovery and Expediency(Tier Ⅴ)");
     }
 }

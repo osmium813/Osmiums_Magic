@@ -1,5 +1,4 @@
 {
-  "replace": false,
   "values": [
     "osmiumsmagic:mana_ring_tier_one",
     "osmiumsmagic:mana_ring_tier_two",
@@ -33,6 +32,12 @@
     "osmiumsmagic:cooldown_cast_time_ring_tier_two",
     "osmiumsmagic:cooldown_cast_time_ring_tier_three",
     "osmiumsmagic:cooldown_cast_time_ring_tier_four",
-    "osmiumsmagic:cooldown_cast_time_ring_tier_five"
+    "osmiumsmagic:cooldown_cast_time_ring_tier_five",
+    "osmiumsmagic:mana_cooldown_cast_time_ring",
+    "osmiumsmagic:mana_cooldown_cast_time_ring_tier_one",
+    "osmiumsmagic:mana_cooldown_cast_time_ring_tier_two",
+    "osmiumsmagic:mana_cooldown_cast_time_ring_tier_three",
+    "osmiumsmagic:mana_cooldown_cast_time_ring_tier_four",
+    "osmiumsmagic:mana_cooldown_cast_time_ring_tier_five"
   ]
 }

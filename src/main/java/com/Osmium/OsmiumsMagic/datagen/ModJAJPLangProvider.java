@@ -51,5 +51,12 @@ public class ModJAJPLangProvider extends LanguageProvider {
         addItem(ModItems.COOLDOWN_CAST_TIME_RING_TIER_THREE, "回復と利便のリング(Tier Ⅲ)");
         addItem(ModItems.COOLDOWN_CAST_TIME_RING_TIER_FOUR, "回復と利便のリング(Tier Ⅳ)");
         addItem(ModItems.COOLDOWN_CAST_TIME_RING_TIER_FIVE, "回復と利便のリング(Tier Ⅴ)");
+        
+        addItem(ModItems.MANA_COOLDOWN_CAST_TIME_RING, "マナと回復と利便のリング");
+        addItem(ModItems.MANA_COOLDOWN_CAST_TIME_RING_TIER_ONE, "マナと回復と利便のリング(Tier Ⅰ)");
+        addItem(ModItems.MANA_COOLDOWN_CAST_TIME_RING_TIER_TWO, "マナと回復と利便のリング(Tier Ⅱ)");
+        addItem(ModItems.MANA_COOLDOWN_CAST_TIME_RING_TIER_THREE, "マナと回復と利便のリング(Tier Ⅲ)");
+        addItem(ModItems.MANA_COOLDOWN_CAST_TIME_RING_TIER_FOUR, "マナと回復と利便のリング(Tier Ⅳ)");
+        addItem(ModItems.MANA_COOLDOWN_CAST_TIME_RING_TIER_FIVE, "マナと回復と利便のリング(Tier Ⅴ)");
     }
 }
