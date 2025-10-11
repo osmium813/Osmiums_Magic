@@ -16,13 +16,12 @@ import java.util.List;
 import java.util.function.Consumer;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
-
-    public ModRecipeProvider(PackOutput p_248933_) {
-        super(p_248933_);
+    public ModRecipeProvider(PackOutput output) {
+        super(output);
     }
 
     @Override
-    protected void buildRecipes(Consumer<FinishedRecipe> p_251297_) {
+    protected void buildRecipes(Consumer<FinishedRecipe> pWriter) {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MANA_RING_TIER_ONE.get())
                 .pattern("XYX")
                 .pattern("YZY")
@@ -31,7 +30,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('Y', ItemRegistry.ARCANE_ESSENCE.get())
                 .define('Z', ItemRegistry.MANA_RING.get())
                 .unlockedBy(getHasName(ItemRegistry.MANA_RING.get()), has(ItemRegistry.MANA_RING.get()))
-                .save(p_251297_);
+                .save(pWriter);
     }
 
     protected static void oreSmelting(Consumer<FinishedRecipe> p_250654_, List<ItemLike> p_250172_, RecipeCategory p_250588_, ItemLike p_251868_, float p_250789_, int p_252144_, String p_251687_) {
@@ -46,5 +45,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         for(ItemLike itemlike : p_249619_) {
             SimpleCookingRecipeBuilder.generic(Ingredient.of(itemlike), p_251154_, p_250066_, p_251871_, p_251316_, p_251817_).group(p_251450_).unlockedBy(getHasName(itemlike), has(itemlike)).save(p_250791_, Osmiumsmagic.MOD_ID + ":" + getItemName(p_250066_) + p_249236_ + "_" + getItemName(itemlike));
         }
+
     }
 }

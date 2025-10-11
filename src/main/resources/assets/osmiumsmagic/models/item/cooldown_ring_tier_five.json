@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "osmiumsmagic:item/cool_down_ring_tier_five"
-  }
-}
