@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "osmiumsmagic:item/cooldown_cast_time_ring_tier_one"
+  }
+}
