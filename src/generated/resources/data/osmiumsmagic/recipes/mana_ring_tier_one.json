@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "X": {
+      "item": "minecraft:diamond"
+    },
+    "Y": {
+      "item": "irons_spellbooks:arcane_essence"
+    },
+    "Z": {
+      "item": "irons_spellbooks:mana_ring"
+    }
+  },
+  "pattern": [
+    "XYX",
+    "YZY",
+    "XYX"
+  ],
+  "result": {
+    "item": "osmiumsmagic:mana_ring_tier_one"
+  },
+  "show_notification": true
+}

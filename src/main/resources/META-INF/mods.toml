@@ -19,7 +19,7 @@ modId="osmiumsmagic" #mandatory
 # The version number of the mod
 version="1.0.0" #mandatory
 # A display name for the mod
-displayName="Osmium's Magic - Iron's Spellbooks Addon'" #mandatory
+displayName="Osmium's Magic - Iron's Spellbooks Addon" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification https://docs.minecraftforge.net/en/latest/misc/updatechecker/
 #updateJSONURL="https://change.me.example.invalid/updates.json" #optional
 # A URL for the "homepage" for this mod, displayed in the mod UI
