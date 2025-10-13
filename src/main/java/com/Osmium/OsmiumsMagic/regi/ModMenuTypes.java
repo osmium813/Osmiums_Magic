@@ -1,4 +1,4 @@
-package com.Osmium.OsmiumsMagic.inventory.menu;
+package com.Osmium.OsmiumsMagic.regi;
 
 import com.Osmium.OsmiumsMagic.Main.Osmiumsmagic;
 import net.minecraft.world.inventory.AbstractContainerMenu;
