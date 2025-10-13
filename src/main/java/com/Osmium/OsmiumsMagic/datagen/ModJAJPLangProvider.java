@@ -1,6 +1,7 @@
 package com.Osmium.OsmiumsMagic.datagen;
 
 import com.Osmium.OsmiumsMagic.Main.Osmiumsmagic;
+import com.Osmium.OsmiumsMagic.regi.ModBlocks;
 import com.Osmium.OsmiumsMagic.regi.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
@@ -58,5 +59,7 @@ public class ModJAJPLangProvider extends LanguageProvider {
         addItem(ModItems.MANA_COOLDOWN_CAST_TIME_RING_TIER_THREE, "マナと回復と利便のリング(Tier Ⅲ)");
         addItem(ModItems.MANA_COOLDOWN_CAST_TIME_RING_TIER_FOUR, "マナと回復と利便のリング(Tier Ⅳ)");
         addItem(ModItems.MANA_COOLDOWN_CAST_TIME_RING_TIER_FIVE, "マナと回復と利便のリング(Tier Ⅴ)");
+
+        addBlock(ModBlocks.REINFORCEMENT_TABLE, "強化台");
     }
 }

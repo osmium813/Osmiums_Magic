@@ -1,5 +1,6 @@
 package com.Osmium.OsmiumsMagic.Main;
 
+import com.Osmium.OsmiumsMagic.regi.ModBlockEntities;
 import com.Osmium.OsmiumsMagic.regi.ModMenuTypes;
 import com.Osmium.OsmiumsMagic.regi.ModBlocks;
 import com.Osmium.OsmiumsMagic.regi.ModItems;
@@ -25,6 +26,7 @@ public class Osmiumsmagic {
         OsmiumsmagicTabs.MOD_TABS.register(bus);
 
         ModMenuTypes.resister(bus);
+        ModBlockEntities.register(bus);
     }
 
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)

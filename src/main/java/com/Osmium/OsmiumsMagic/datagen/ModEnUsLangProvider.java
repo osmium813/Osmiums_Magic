@@ -1,6 +1,7 @@
 package com.Osmium.OsmiumsMagic.datagen;
 
 import com.Osmium.OsmiumsMagic.Main.Osmiumsmagic;
+import com.Osmium.OsmiumsMagic.regi.ModBlocks;
 import com.Osmium.OsmiumsMagic.regi.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
@@ -58,5 +59,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         addItem(ModItems.MANA_COOLDOWN_CAST_TIME_RING_TIER_THREE, "Ring of Mana, Recovery and Expediency(Tier Ⅲ)");
         addItem(ModItems.MANA_COOLDOWN_CAST_TIME_RING_TIER_FOUR, "Ring of Mana, Recovery and Expediency(Tier Ⅳ)");
         addItem(ModItems.MANA_COOLDOWN_CAST_TIME_RING_TIER_FIVE, "Ring of Mana, Recovery and Expediency(Tier Ⅴ)");
+
+        addBlock(ModBlocks.REINFORCEMENT_TABLE, "Reinforcement Table");
     }
 }
