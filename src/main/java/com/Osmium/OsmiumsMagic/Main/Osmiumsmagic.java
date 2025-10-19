@@ -1,10 +1,12 @@
 package com.Osmium.OsmiumsMagic.Main;
 
+import com.Osmium.OsmiumsMagic.gui.reinforcementtable.ReinforcementTableScreen;
 import com.Osmium.OsmiumsMagic.regi.ModBlockEntities;
-import com.Osmium.OsmiumsMagic.regi.ModMenuTypes;
 import com.Osmium.OsmiumsMagic.regi.ModBlocks;
 import com.Osmium.OsmiumsMagic.regi.ModItems;
+import com.Osmium.OsmiumsMagic.regi.ModMenuTypes;
 import com.Osmium.OsmiumsMagic.regi.tab.OsmiumsmagicTabs;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -33,6 +35,7 @@ public class Osmiumsmagic {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            MenuScreens.register(ModMenuTypes.REINFORCEMENT_TABLE_MANU.get(), ReinforcementTableScreen::new);
         }
     }
 }

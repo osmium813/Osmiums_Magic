@@ -1,5 +1,6 @@
 package com.Osmium.OsmiumsMagic.entity;
 
+import com.Osmium.OsmiumsMagic.gui.reinforcementtable.ReinforcementTableMenu;
 import com.Osmium.OsmiumsMagic.regi.ModBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -11,9 +12,9 @@ import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
@@ -40,6 +41,7 @@ public class ReinforcementTableBlockEntity extends BlockEntity implements MenuPr
     private static final int OUTPUT_SLOT = 10;
 
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
+    private ContainerData data;
 
     public ReinforcementTableBlockEntity(BlockPos p_155229_, BlockState p_155230_) {
         super(ModBlockEntities.REINFORCEMENT_TABLE_BE.get(), p_155229_, p_155230_);
@@ -80,8 +82,8 @@ public class ReinforcementTableBlockEntity extends BlockEntity implements MenuPr
     }
 
     @Override
-    public @Nullable AbstractContainerMenu createMenu(int p_39954_, Inventory p_39955_, Player p_39956_) {
-        return ;
+    public @Nullable AbstractContainerMenu createMenu(int containerId, Inventory playerInventory, Player player) {
+        return new ReinforcementTableMenu(containerId, playerInventory, this, this.data);
     }
 
     @Override
