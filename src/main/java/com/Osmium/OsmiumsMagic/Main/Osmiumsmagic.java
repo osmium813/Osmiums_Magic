@@ -27,7 +27,7 @@ public class Osmiumsmagic {
 
         OsmiumsmagicTabs.MOD_TABS.register(bus);
 
-        ModMenuTypes.resister(bus);
+        ModMenuTypes.register(bus);
         ModBlockEntities.register(bus);
     }
 

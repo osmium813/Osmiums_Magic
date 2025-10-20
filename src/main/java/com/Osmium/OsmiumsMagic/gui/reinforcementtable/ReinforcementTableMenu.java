@@ -33,16 +33,16 @@ public class ReinforcementTableMenu extends AbstractContainerMenu {
         addPlayerHotbar(inv);
 
         this.blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(iItemHandler -> {
-            this.addSlot(new SlotItemHandler(iItemHandler, 0, 19,11));
-            this.addSlot(new SlotItemHandler(iItemHandler, 1, 43,5));
-            this.addSlot(new SlotItemHandler(iItemHandler, 2, 66,11));
-            this.addSlot(new SlotItemHandler(iItemHandler, 3, 14,34));
-            this.addSlot(new SlotItemHandler(iItemHandler, 4, 43,34));
-            this.addSlot(new SlotItemHandler(iItemHandler, 5, 72,34));
-            this.addSlot(new SlotItemHandler(iItemHandler, 6, 19,57));
-            this.addSlot(new SlotItemHandler(iItemHandler, 7, 43,63));
-            this.addSlot(new SlotItemHandler(iItemHandler, 8, 66,57));
-            this.addSlot(new SlotItemHandler(iItemHandler, 9, 125,34));
+            this.addSlot(new SlotItemHandler(iItemHandler, 0, 20,12));
+            this.addSlot(new SlotItemHandler(iItemHandler, 1, 44,6));
+            this.addSlot(new SlotItemHandler(iItemHandler, 2, 67,12));
+            this.addSlot(new SlotItemHandler(iItemHandler, 3, 15,35));
+            this.addSlot(new SlotItemHandler(iItemHandler, 4, 44,35));
+            this.addSlot(new SlotItemHandler(iItemHandler, 5, 73,35));
+            this.addSlot(new SlotItemHandler(iItemHandler, 6, 20,58));
+            this.addSlot(new SlotItemHandler(iItemHandler, 7, 44,64));
+            this.addSlot(new SlotItemHandler(iItemHandler, 8, 67,58));
+            this.addSlot(new SlotItemHandler(iItemHandler, 9, 126,35));
             this.addSlot(new SlotItemHandler(iItemHandler, 10, 134,64));
         });
 

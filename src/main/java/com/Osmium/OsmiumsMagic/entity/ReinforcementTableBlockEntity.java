@@ -42,9 +42,35 @@ public class ReinforcementTableBlockEntity extends BlockEntity implements MenuPr
 
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
     private ContainerData data;
+    private int essencecount = 0;
+    private int maxEssenceCount = 16;
 
     public ReinforcementTableBlockEntity(BlockPos p_155229_, BlockState p_155230_) {
         super(ModBlockEntities.REINFORCEMENT_TABLE_BE.get(), p_155229_, p_155230_);
+
+        this.data = new ContainerData() {
+            @Override
+            public int get(int pIndex) {
+                return switch (pIndex){
+                    case 0 -> ReinforcementTableBlockEntity.this.essencecount;
+                    case 1 -> ReinforcementTableBlockEntity.this.maxEssenceCount;
+                    default -> 0;
+                };
+            }
+
+            @Override
+            public void set(int pIndex, int pValue) {
+                switch (pIndex) {
+                    case 0 -> ReinforcementTableBlockEntity.this.essencecount = pValue;
+                    case 1 -> ReinforcementTableBlockEntity.this.maxEssenceCount = pValue;
+                }
+            }
+
+            @Override
+            public int getCount() {
+                return 2;
+            }
+        };
     }
 
     @Override
@@ -89,6 +115,7 @@ public class ReinforcementTableBlockEntity extends BlockEntity implements MenuPr
     @Override
     protected void saveAdditional(CompoundTag tag) {
         tag.put("inventory", itemHandler.serializeNBT());
+        tag.putInt("reinforcement_table.essencecount", essencecount);
 
         super.saveAdditional(tag);
     }
@@ -97,6 +124,7 @@ public class ReinforcementTableBlockEntity extends BlockEntity implements MenuPr
     public void load(CompoundTag tag) {
         super.load(tag);
         itemHandler.deserializeNBT(tag.getCompound("inventory"));
+        essencecount = tag.getInt("reinforcement_table.essencecount");
     }
 
     public void tick(Level level, BlockPos pos, BlockState state) {
