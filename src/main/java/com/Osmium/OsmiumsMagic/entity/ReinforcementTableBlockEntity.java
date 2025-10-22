@@ -155,7 +155,7 @@ public class ReinforcementTableBlockEntity extends BlockEntity implements MenuPr
 
     private boolean hasEssence() {
         ItemStack stack = itemHandler.getStackInSlot(INPUT_ESSENCE_SLOT);
-        return !stack.isEmpty() && stack.getItem() == ItemRegister.ARCANE_ESSENCE.get();
+        return !stack.isEmpty() && stack.getItem() == ItemRegistry.ARCANE_ESSENCE.get();
     }
 
     private void reduceEssence(){
