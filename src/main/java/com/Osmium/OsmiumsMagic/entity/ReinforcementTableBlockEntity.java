@@ -44,6 +44,7 @@ public class ReinforcementTableBlockEntity extends BlockEntity implements MenuPr
     private ContainerData data;
     private int essencecount = 0;
     private int maxEssenceCount = 16;
+    private int tickCounter = 0;
 
     public ReinforcementTableBlockEntity(BlockPos p_155229_, BlockState p_155230_) {
         super(ModBlockEntities.REINFORCEMENT_TABLE_BE.get(), p_155229_, p_155230_);
@@ -131,6 +132,17 @@ public class ReinforcementTableBlockEntity extends BlockEntity implements MenuPr
         if (hasRecipe()) {
             craftItem();
         }
+
+        tickCounter++;
+        if (tickCounter >= 20) {
+            tickCounter = 0;
+            if (essencecount < maxEssenceCount) {
+                if (hasEssence()) {
+                    reduceEssence();
+                    increraseEssenceCount();
+                }
+            }
+        }
     }
 
     private boolean hasRecipe() {
@@ -139,5 +151,20 @@ public class ReinforcementTableBlockEntity extends BlockEntity implements MenuPr
 
     private void craftItem() {
         
+    }
+
+    private boolean hasEssence() {
+        ItemStack stack = itemHandler.getStackInSlot(INPUT_ESSENCE_SLOT);
+        return !stack.isEmpty() && stack.getItem() == ItemRegister.ARCANE_ESSENCE.get();
+    }
+
+    private void reduceEssence(){
+        ItemStack stack = itemHandler.getStackInSlot(INPUT_ESSENCE_SLOT);
+        stack.shrink(1);
+        itemHandler.setStackInSlot(INPUT_ESSENCE_SLOT, stack);
+    }
+
+    private void increraseEssenceCount() {
+        essencecount++;
     }
 }
