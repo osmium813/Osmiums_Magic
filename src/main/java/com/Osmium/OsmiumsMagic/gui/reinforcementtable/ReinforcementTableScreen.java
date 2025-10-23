@@ -34,6 +34,8 @@ public class ReinforcementTableScreen extends AbstractContainerScreen<Reinforcem
         int y = (height - imageHeight) / 2;
 
         guiGraphics.blit(TEXTURE, x, y, 0, 0, imageWidth, imageHeight);
+
+        guiGraphics.blit(TEXTURE, 152, 80, 180, 80, 196, 80 - (this.menu.blockEntity.essencecount/16)); //4
     }
 
     @Override

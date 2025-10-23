@@ -2,6 +2,7 @@ package com.Osmium.OsmiumsMagic.entity;
 
 import com.Osmium.OsmiumsMagic.gui.reinforcementtable.ReinforcementTableMenu;
 import com.Osmium.OsmiumsMagic.regi.ModBlockEntities;
+import io.redspace.ironsspellbooks.registries.ItemRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -13,6 +14,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -37,12 +39,12 @@ public class ReinforcementTableBlockEntity extends BlockEntity implements MenuPr
     private static final int INPUT_SLOT_7 = 6;
     private static final int INPUT_SLOT_8 = 7;
     private static final int INPUT_SLOT_9 = 8;
-    private static final int INPUT_ESSENCE_SLOT = 9;
-    private static final int OUTPUT_SLOT = 10;
+    private static final int OUTPUT_SLOT = 9;
+    private static final int INPUT_ESSENCE_SLOT = 10;
 
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
     private ContainerData data;
-    private int essencecount = 0;
+    public int essencecount = 0;
     private int maxEssenceCount = 16;
     private int tickCounter = 0;
 
@@ -139,7 +141,7 @@ public class ReinforcementTableBlockEntity extends BlockEntity implements MenuPr
             if (essencecount < maxEssenceCount) {
                 if (hasEssence()) {
                     reduceEssence();
-                    increraseEssenceCount();
+                    increaseEssenceCount();
                 }
             }
         }
@@ -164,7 +166,7 @@ public class ReinforcementTableBlockEntity extends BlockEntity implements MenuPr
         itemHandler.setStackInSlot(INPUT_ESSENCE_SLOT, stack);
     }
 
-    private void increraseEssenceCount() {
+    private void increaseEssenceCount() {
         essencecount++;
     }
 }
