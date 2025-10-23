@@ -35,7 +35,29 @@ public class ReinforcementTableScreen extends AbstractContainerScreen<Reinforcem
 
         guiGraphics.blit(TEXTURE, x, y, 0, 0, imageWidth, imageHeight);
 
-        guiGraphics.blit(TEXTURE, 152, 80, 180, 80, 196, 80 - (this.menu.blockEntity.essencecount/16)); //4
+        // ---- ゲージ描画 ----
+    int essence = this.menu.blockEntity.essencecount; // 0〜16 の値
+    int maxEssence = 16;
+
+    // テクスチャ上のゲージ部分（180, 4）〜（196, 80）
+    int texU = 180;
+    int texV = 4;
+    int texWidth = 16;
+    int texHeight = 76; // 80 - 4 = 76ピクセル
+
+    // essence に応じて高さを決定（整数で計算）
+    int filled = (int)((float)essence / maxEssence * texHeight);
+
+    // 描画先の座標（152, 4）〜（168, 80）
+    int drawX = x + 152;
+    int drawYBottom = y + 80;
+    int drawYTop = drawYBottom - filled; // 下から上に伸ばす
+
+    // テクスチャの対応部分も下から切り取る
+    int texVStart = texV + (texHeight - filled);
+
+    // 実際の描画
+    guiGraphics.blit(TEXTURE, drawX, drawYTop, texU, texVStart, texWidth, filled);
     }
 
     @Override
