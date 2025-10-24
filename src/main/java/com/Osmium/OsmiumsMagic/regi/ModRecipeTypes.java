@@ -8,6 +8,13 @@ import com.Osmium.OsmiumsMagic.Main.Osmiumsmagic;
 
 public class ModRecipeTypes {
 
+       public static final DeferredRegister<RecipeType<?>> RECIPES =
+              DeferredRegister.create(ForgeRegistries.RECIPE_TYPES, Osmiumsmagic.MOD_ID);
+       
+       public static void register(IEventBus eventBus){
+              RECIPES.register(eventBus);
+       }
+
        public static final RegistryObject<RecipeType<ReinforcementRecipe>> REINFORCEMENT =
             RECIPE_TYPES.register("reinforcement", 
                 () -> new RecipeType<>() {
@@ -16,12 +23,5 @@ public class ModRecipeTypes {
                         return new ResourceLocation(Osmiumsmagic.MOD_ID, "reinforcement").toString();
                     }
                 });
-    
-
-    public static final DeferredRegister<RecipeType<?>> RECIPES =
-            DeferredRegister.create(ForgeRegistries.RECIPE_TYPES, Osmiumsmagic.MOD_ID);
-
-    public static void register(IEventBus eventBus){
-        RECIPES.register(eventBus);
-    }
+       
 }
