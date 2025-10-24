@@ -29,17 +29,18 @@ import org.jetbrains.annotations.Nullable;
 public class ReinforcementTableBlockEntity extends BlockEntity implements MenuProvider {
 
     private final ItemStackHandler itemHandler = new ItemStackHandler(11){
-    @Override
-    protected void onContentsChanged(int slot) {
-        setChanged();
-    }
-
-    @Override
-    public boolean isItemValid(int slot, @NotNull ItemStack stack) {
-        if (slot == 10) {
-            return stack.getItem() == ItemRegistry.ARCANE_ESSENCE.get();
+        @Override
+        protected void onContentsChanged(int slot) {
+            setChanged();
         }
-        return true;
+
+        @Override
+        public boolean isItemValid(int slot, @NotNull ItemStack stack) {
+            if (slot == 10) {
+                return stack.getItem() == ItemRegistry.ARCANE_ESSENCE.get();
+            }
+            return true;
+        }
     };
 
     private static final int INPUT_SLOT_1 = 0;
