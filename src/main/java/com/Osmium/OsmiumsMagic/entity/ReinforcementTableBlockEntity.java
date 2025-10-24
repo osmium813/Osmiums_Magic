@@ -37,7 +37,7 @@ public class ReinforcementTableBlockEntity extends BlockEntity implements MenuPr
     @Override
     public boolean isItemValid(int slot, @NotNull ItemStack stack) {
         if (slot == 10) {
-            return stack.getItem() == ModItems.ARCANE_ESSENCE.get();
+            return stack.getItem() == ItemRegistry.ARCANE_ESSENCE.get();
         }
         return true;
     };
