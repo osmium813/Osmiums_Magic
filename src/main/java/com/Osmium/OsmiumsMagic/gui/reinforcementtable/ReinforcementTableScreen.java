@@ -46,7 +46,7 @@ public class ReinforcementTableScreen extends AbstractContainerScreen<Reinforcem
     int texHeight = 76; // 80 - 4 = 76ピクセル
 
     // essence に応じて高さを決定（整数で計算）
-    int filled = (int)((float)essence / maxEssence * texHeight);
+    float filled = (essence / maxEssence) * texHeight;
 
     // 描画先の座標（152, 4）〜（168, 80）
     int drawX = x + 152;
