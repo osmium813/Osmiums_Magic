@@ -1,6 +1,7 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
+  "type": "osmiumsmagic:reinforcement",
+  "craft_time": 200,
+  "essence": 8,
   "key": {
     "X": {
       "item": "minecraft:diamond"
@@ -19,6 +20,5 @@
   ],
   "result": {
     "item": "osmiumsmagic:mana_ring_tier_one"
-  },
-  "show_notification": true
+  }
 }

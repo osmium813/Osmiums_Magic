@@ -1,10 +1,7 @@
 package com.Osmium.OsmiumsMagic.Main;
 
 import com.Osmium.OsmiumsMagic.gui.reinforcementtable.ReinforcementTableScreen;
-import com.Osmium.OsmiumsMagic.regi.ModBlockEntities;
-import com.Osmium.OsmiumsMagic.regi.ModBlocks;
-import com.Osmium.OsmiumsMagic.regi.ModItems;
-import com.Osmium.OsmiumsMagic.regi.ModMenuTypes;
+import com.Osmium.OsmiumsMagic.regi.*;
 import com.Osmium.OsmiumsMagic.regi.tab.OsmiumsmagicTabs;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.api.distmarker.Dist;
@@ -29,6 +26,7 @@ public class Osmiumsmagic {
 
         ModMenuTypes.register(bus);
         ModBlockEntities.register(bus);
+        ModRecipes.register(bus);
     }
 
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)

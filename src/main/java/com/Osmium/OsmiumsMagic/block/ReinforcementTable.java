@@ -1,6 +1,5 @@
 package com.Osmium.OsmiumsMagic.block;
 
-import com.Osmium.OsmiumsMagic.Main.Osmiumsmagic;
 import com.Osmium.OsmiumsMagic.entity.ReinforcementTableBlockEntity;
 import com.Osmium.OsmiumsMagic.regi.ModBlockEntities;
 import net.minecraft.core.BlockPos;
@@ -63,7 +62,7 @@ public class ReinforcementTable extends BaseEntityBlock {
                 throw new IllegalStateException("Our Container provider is missing!");
             }
         }
-        return super.use(state, level, pos, player, hand, hit);
+        return InteractionResult.SUCCESS;
     }
 
     @Override

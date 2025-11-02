@@ -19,7 +19,7 @@ public class ReinforcementTableMenu extends AbstractContainerMenu {
     private final ContainerData data;
 
     public ReinforcementTableMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData) {
-        this(pContainerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
+        this(pContainerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(4));
     }
 
     public ReinforcementTableMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
@@ -46,7 +46,7 @@ public class ReinforcementTableMenu extends AbstractContainerMenu {
             this.addSlot(new SlotItemHandler(iItemHandler, 10, 134,64));
         });
 
-        addDataSlots(data);
+        this.addDataSlots(data);
     }
 
 
@@ -107,5 +107,25 @@ public class ReinforcementTableMenu extends AbstractContainerMenu {
         for (int i = 0; i < 9; ++i) {
             this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 142));
         }
+    }
+
+    public ReinforcementTableBlockEntity getBlockEntity() {
+        return blockEntity;
+    }
+
+    public int getEssenceCount() {
+        return data.get(0); // ← クライアントでも常に同期された値を取得できる
+    }
+
+    public int getMaxEssenceCount() {
+        return data.get(1);
+    }
+
+    public int getProgress() {
+        return data.get(2);
+    }
+
+    public int getMaxProgress() {
+        return data.get(3);
     }
 }

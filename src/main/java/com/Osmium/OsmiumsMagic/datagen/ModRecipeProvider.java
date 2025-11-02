@@ -1,6 +1,7 @@
 package com.Osmium.OsmiumsMagic.datagen;
 
 import com.Osmium.OsmiumsMagic.Main.Osmiumsmagic;
+import com.Osmium.OsmiumsMagic.recipe.ReinforcementRecipeBuilder;
 import com.Osmium.OsmiumsMagic.regi.ModItems;
 import io.redspace.ironsspellbooks.registries.ItemRegistry;
 import net.minecraft.data.PackOutput;
@@ -22,13 +23,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> pWriter) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MANA_RING_TIER_ONE.get())
+
+        ReinforcementRecipeBuilder.reinforcement(RecipeCategory.MISC, ModItems.MANA_RING_TIER_ONE.get())
                 .pattern("XYX")
                 .pattern("YZY")
                 .pattern("XYX")
                 .define('X', Items.DIAMOND)
                 .define('Y', ItemRegistry.ARCANE_ESSENCE.get())
                 .define('Z', ItemRegistry.MANA_RING.get())
+                .crafttime(200)
+                .needessence(8)
                 .unlockedBy(getHasName(ItemRegistry.MANA_RING.get()), has(ItemRegistry.MANA_RING.get()))
                 .save(pWriter);
     }

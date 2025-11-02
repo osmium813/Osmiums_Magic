@@ -1,6 +1,7 @@
 package com.Osmium.OsmiumsMagic.entity;
 
 import com.Osmium.OsmiumsMagic.gui.reinforcementtable.ReinforcementTableMenu;
+import com.Osmium.OsmiumsMagic.recipe.ReinforcementRecipe;
 import com.Osmium.OsmiumsMagic.regi.ModBlockEntities;
 import io.redspace.ironsspellbooks.registries.ItemRegistry;
 import net.minecraft.core.BlockPos;
@@ -60,6 +61,8 @@ public class ReinforcementTableBlockEntity extends BlockEntity implements MenuPr
     public int essencecount = 0;
     private int maxEssenceCount = 16;
     private int tickCounter = 0;
+    private int progress = 0;
+    private int maxProgress;
 
     public ReinforcementTableBlockEntity(BlockPos p_155229_, BlockState p_155230_) {
         super(ModBlockEntities.REINFORCEMENT_TABLE_BE.get(), p_155229_, p_155230_);
@@ -70,6 +73,8 @@ public class ReinforcementTableBlockEntity extends BlockEntity implements MenuPr
                 return switch (pIndex){
                     case 0 -> ReinforcementTableBlockEntity.this.essencecount;
                     case 1 -> ReinforcementTableBlockEntity.this.maxEssenceCount;
+                    case 2 -> ReinforcementTableBlockEntity.this.progress;
+                    case 3 -> ReinforcementTableBlockEntity.this.maxProgress;
                     default -> 0;
                 };
             }
@@ -79,12 +84,14 @@ public class ReinforcementTableBlockEntity extends BlockEntity implements MenuPr
                 switch (pIndex) {
                     case 0 -> ReinforcementTableBlockEntity.this.essencecount = pValue;
                     case 1 -> ReinforcementTableBlockEntity.this.maxEssenceCount = pValue;
+                    case 2 -> ReinforcementTableBlockEntity.this.progress = pValue;
+                    case 3 -> ReinforcementTableBlockEntity.this.maxProgress = pValue;
                 }
             }
 
             @Override
             public int getCount() {
-                return 2;
+                return 4;
             }
         };
     }
@@ -132,6 +139,7 @@ public class ReinforcementTableBlockEntity extends BlockEntity implements MenuPr
     protected void saveAdditional(CompoundTag tag) {
         tag.put("inventory", itemHandler.serializeNBT());
         tag.putInt("reinforcement_table.essencecount", essencecount);
+        tag.putInt("alloy_smelter.progress", progress);
 
         super.saveAdditional(tag);
     }
@@ -141,11 +149,20 @@ public class ReinforcementTableBlockEntity extends BlockEntity implements MenuPr
         super.load(tag);
         itemHandler.deserializeNBT(tag.getCompound("inventory"));
         essencecount = tag.getInt("reinforcement_table.essencecount");
+        progress = tag.getInt("alloy_smelter.progress");
     }
 
     public void tick(Level level, BlockPos pos, BlockState state) {
         if (hasRecipe()) {
-            craftItem();
+            setMaxProgress();
+            increaseCraftingProgress();
+
+            if (hasProgressFinished()) {
+                craftItem();
+                resetProgress();
+            }
+        } else {
+            resetProgress();
         }
 
         tickCounter++;
@@ -161,11 +178,53 @@ public class ReinforcementTableBlockEntity extends BlockEntity implements MenuPr
     }
 
     private boolean hasRecipe() {
-        return false;
+        if (level == null) return false;
+
+        SimpleContainer inv = new SimpleContainer(itemHandler.getSlots());
+        for (int i = 0; i < itemHandler.getSlots(); i++) {
+            inv.setItem(i, itemHandler.getStackInSlot(i));
+        }
+
+        return level.getRecipeManager()
+                .getAllRecipesFor(ReinforcementRecipe.Type.INSTANCE)
+                .stream()
+                .anyMatch(recipe -> recipe.matches(inv, level)
+                        && essencecount >= recipe.getEssenceCost());
     }
 
     private void craftItem() {
-        
+        if (level == null) return;
+
+        SimpleContainer inv = new SimpleContainer(itemHandler.getSlots());
+        for (int i = 0; i < itemHandler.getSlots(); i++) {
+            inv.setItem(i, itemHandler.getStackInSlot(i));
+        }
+
+        var optionalRecipe = level.getRecipeManager()
+                .getAllRecipesFor(ReinforcementRecipe.Type.INSTANCE)
+                .stream()
+                .filter(recipe -> recipe.matches(inv, level))
+                .findFirst();
+
+        if (optionalRecipe.isEmpty()) return;
+
+        ReinforcementRecipe recipe = optionalRecipe.get();
+
+        if (essencecount < recipe.getEssenceCost()) return;
+
+        // 完成品のセット
+        ItemStack result = recipe.getResultItem(level.registryAccess()).copy();
+        itemHandler.setStackInSlot(OUTPUT_SLOT, result);
+
+        // 消費処理
+        essencecount -= recipe.getEssenceCost();
+
+        // 素材の消費（1個ずつ）
+        for (int i = 0; i < 9; i++) {
+            itemHandler.getStackInSlot(i).shrink(1);
+        }
+
+        setChanged();
     }
 
     private boolean hasEssence() {
@@ -181,5 +240,42 @@ public class ReinforcementTableBlockEntity extends BlockEntity implements MenuPr
 
     private void increaseEssenceCount() {
         essencecount++;
+    }
+
+    private void resetProgress() {
+        progress = 0;
+    }
+
+    private boolean hasProgressFinished() {
+        return progress >= maxProgress;
+    }
+
+    private void increaseCraftingProgress() {
+        progress++;
+    }
+
+    private void setMaxProgress() {
+        if (level == null) return;
+
+        // 現在のスロットの内容をSimpleContainerに詰める
+        SimpleContainer inv = new SimpleContainer(itemHandler.getSlots());
+        for (int i = 0; i < itemHandler.getSlots(); i++) {
+            inv.setItem(i, itemHandler.getStackInSlot(i));
+        }
+
+        // レシピマネージャーから現在の入力にマッチするレシピを探す
+        var optionalRecipe = level.getRecipeManager()
+                .getAllRecipesFor(ReinforcementRecipe.Type.INSTANCE)
+                .stream()
+                .filter(recipe -> recipe.matches(inv, level))
+                .findFirst();
+
+        // レシピが見つかったら、そのクラフト時間をmaxProgressに設定
+        if (optionalRecipe.isPresent()) {
+            ReinforcementRecipe recipe = optionalRecipe.get();
+            this.maxProgress = recipe.getCraftTime(); // ← JSONの"craft_time"がここに反映される！
+        } else {
+            this.maxProgress = 0; // 該当レシピがなければ0にリセット
+        }
     }
 }
