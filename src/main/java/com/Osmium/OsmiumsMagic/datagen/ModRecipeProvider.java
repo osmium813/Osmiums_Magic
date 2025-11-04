@@ -29,11 +29,35 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("YZY")
                 .pattern("XYX")
                 .define('X', Items.DIAMOND)
-                .define('Y', ItemRegistry.ARCANE_ESSENCE.get())
+                .define('Y', ItemRegistry.ARCANE_INGOT.get())
                 .define('Z', ItemRegistry.MANA_RING.get())
                 .crafttime(200)
-                .needessence(8)
+                .needessence(4)
                 .unlockedBy(getHasName(ItemRegistry.MANA_RING.get()), has(ItemRegistry.MANA_RING.get()))
+                .save(pWriter);
+
+        ReinforcementRecipeBuilder.reinforcement(RecipeCategory.MISC, ModItems.COOLDOWN_RING_TIER_ONE.get())
+                .pattern("XYX")
+                .pattern("YZY")
+                .pattern("XYX")
+                .define('X', Items.DIAMOND)
+                .define('Y', ItemRegistry.ARCANE_INGOT.get())
+                .define('Z', ItemRegistry.COOLDOWN_RING.get())
+                .crafttime(200)
+                .needessence(4)
+                .unlockedBy(getHasName(ItemRegistry.COOLDOWN_RING.get()), has(ItemRegistry.COOLDOWN_RING.get()))
+                .save(pWriter);
+
+        ReinforcementRecipeBuilder.reinforcement(RecipeCategory.MISC, ModItems.CAST_TIME_RING_TIER_ONE.get())
+                .pattern("XYX")
+                .pattern("YZY")
+                .pattern("XYX")
+                .define('X', Items.DIAMOND)
+                .define('Y', ItemRegistry.ARCANE_INGOT.get())
+                .define('Z', ItemRegistry.CAST_TIME_RING.get())
+                .crafttime(200)
+                .needessence(4)
+                .unlockedBy(getHasName(ItemRegistry.CAST_TIME_RING.get()), has(ItemRegistry.CAST_TIME_RING.get()))
                 .save(pWriter);
     }
 
