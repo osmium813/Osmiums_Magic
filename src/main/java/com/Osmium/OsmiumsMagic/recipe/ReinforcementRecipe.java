@@ -3,6 +3,7 @@ package com.Osmium.OsmiumsMagic.recipe;
 import com.Osmium.OsmiumsMagic.Main.Osmiumsmagic;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
@@ -20,12 +21,12 @@ import java.util.Map;
 public class ReinforcementRecipe implements Recipe<SimpleContainer> {
 
     private final ResourceLocation id;
-    private final List<Ingredient> ingredients;
+    private final NonNullList<Ingredient> ingredients;
     private final ItemStack result;
     private final int essenceCost;
     private final int craftTime; // tick単位
 
-    public ReinforcementRecipe(ResourceLocation id, List<Ingredient> ingredients, ItemStack result, int essenceCost, int craftTime) {
+    public ReinforcementRecipe(ResourceLocation id, NonNullList<Ingredient> ingredients, ItemStack result, int essenceCost, int craftTime) {
         this.id = id;
         this.ingredients = ingredients;
         this.result = result;
@@ -41,6 +42,11 @@ public class ReinforcementRecipe implements Recipe<SimpleContainer> {
             }
         }
         return true;
+    }
+
+    @Override
+    public NonNullList<Ingredient> getIngredients() {
+        return ingredients;
     }
 
     @Override
@@ -106,14 +112,16 @@ public class ReinforcementRecipe implements Recipe<SimpleContainer> {
             }
 
             // === pattern展開（3x3固定） ===
-            List<Ingredient> ingredients = new ArrayList<>();
+            NonNullList<Ingredient> ingredients = NonNullList.withSize(9, Ingredient.EMPTY);
+            int index = 0;
             for (String line : pattern) {
                 for (char symbol : line.toCharArray()) {
                     if (symbol == ' ') {
-                        ingredients.add(Ingredient.EMPTY);
+                        ingredients.set(index, Ingredient.EMPTY);
                     } else {
-                        ingredients.add(keyMap.get(symbol));
+                        ingredients.set(index, keyMap.get(symbol));
                     }
+                    index++;
                 }
             }
 
@@ -128,9 +136,9 @@ public class ReinforcementRecipe implements Recipe<SimpleContainer> {
         @Override
         public @Nullable ReinforcementRecipe fromNetwork(ResourceLocation id, FriendlyByteBuf buf) {
             int size = buf.readInt();
-            List<Ingredient> ingredients = new ArrayList<>();
+            NonNullList<Ingredient> ingredients = NonNullList.withSize(size, Ingredient.EMPTY);
             for (int i = 0; i < size; i++) {
-                ingredients.add(Ingredient.fromNetwork(buf));
+                ingredients.set(i, Ingredient.fromNetwork(buf));
             }
 
             ItemStack result = buf.readItem();

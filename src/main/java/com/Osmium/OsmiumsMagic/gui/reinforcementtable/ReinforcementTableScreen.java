@@ -40,7 +40,7 @@ public class ReinforcementTableScreen extends AbstractContainerScreen<Reinforcem
         int maxEssence = menu.getMaxEssenceCount();
 
         // テクスチャ上のゲージ位置（右端にある想定）
-        int texU = 180;  // ← ここが正しいか確認（誤ってると描画されない）
+        int texU = 180;
         int texV = 4;
         int texWidth = 16;
         int texHeight = 76; // 80 - 4 = 76ピクセル分
