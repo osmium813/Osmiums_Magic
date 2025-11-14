@@ -14,6 +14,11 @@ public class ModEnUsLangProvider extends LanguageProvider {
     @Override
     protected void addTranslations() {
         add("itemGroup.osmium_magic_items", "Osmium's Magic Items");
+        add("itemGroup.osmium_magic_ornaments", "Osmium's Magic Ornaments");
+        add("itemGroup.osmium_magic_blocks", "Osmium's Magic Blocks");
+
+        addItem(ModItems.MANA_INGOT, "Mana Ingot");
+
         addItem(ModItems.MANA_RING_TIER_ONE, "Ring of Mana(Tier Ⅰ)");
         addItem(ModItems.MANA_RING_TIER_TWO, "Ring of Mana(Tier Ⅱ)");
         addItem(ModItems.MANA_RING_TIER_THREE, "Ring of Mana(Tier Ⅲ)");

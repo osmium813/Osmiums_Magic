@@ -80,7 +80,6 @@ public class ReinforcementCategory implements IRecipeCategory<ReinforcementRecip
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
         RenderSystem.setShaderTexture(0, TEXTURE);
-
         // --- Essenceゲージ ---
         int essence = recipe.getEssenceCost(); // レシピごとの必要エッセンス
         int maxEssence = 16; // GUI側と合わせる（固定値でOK）
@@ -88,12 +87,12 @@ public class ReinforcementCategory implements IRecipeCategory<ReinforcementRecip
         // テクスチャ上のゲージ領域（ReinforcementTableScreenと同じ）
         int texU = 180;
         int texV = 4;
-        int texWidth = 16;
+        int texWidth = 17;
         int texHeight = 76;
 
         // JEI表示上の位置（ReinforcementScreenのGUI位置に合わせる）
-        int drawX = 152 - 60; // JEI内での相対位置補正（94はGUIの左端）
-        int drawYBottom = 80 - 20; // 同様に調整
+        int drawX = 152;
+        int drawYBottom = 80;
 
         // 実際のゲージ高さを計算
         int filled = (essence * texHeight) / maxEssence;

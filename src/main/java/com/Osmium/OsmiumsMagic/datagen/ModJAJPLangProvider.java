@@ -14,6 +14,11 @@ public class ModJAJPLangProvider extends LanguageProvider {
     @Override
     protected void addTranslations() {
         add("itemGroup.osmium_magic_items", "Osmium's Magic アイテム");
+        add("itemGroup.osmium_magic_ornaments", "Osmium's Magic 装飾品");
+        add("itemGroup.osmium_magic_blocks", "Osmium's Magic ブロック");
+
+        addItem(ModItems.MANA_INGOT, "マナインゴット");
+
         addItem(ModItems.MANA_RING_TIER_ONE, "マナのリング(Tier　Ⅰ)");
         addItem(ModItems.MANA_RING_TIER_TWO, "マナのリング(Tier Ⅱ)");
         addItem(ModItems.MANA_RING_TIER_THREE, "マナのリング(Tier Ⅲ)");

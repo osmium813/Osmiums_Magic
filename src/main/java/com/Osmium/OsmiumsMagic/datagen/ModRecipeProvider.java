@@ -59,6 +59,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .needessence(4)
                 .unlockedBy(getHasName(ItemRegistry.CAST_TIME_RING.get()), has(ItemRegistry.CAST_TIME_RING.get()))
                 .save(pWriter);
+
+        ReinforcementRecipeBuilder.reinforcement(RecipeCategory.MISC, ModItems.MANA_INGOT.get())
+                .pattern("XYX")
+                .pattern("YZY")
+                .pattern("XYX")
+                .define('Z', Items.DIAMOND)
+                .define('Y', ItemRegistry.ARCANE_INGOT.get())
+                .define('X', Items.GOLD_INGOT)
+                .crafttime(200)
+                .needessence(4)
+                .unlockedBy(getHasName(ItemRegistry.ARCANE_INGOT.get()), has(ItemRegistry.ARCANE_INGOT.get()))
+                .save(pWriter);
     }
 
     protected static void oreSmelting(Consumer<FinishedRecipe> p_250654_, List<ItemLike> p_250172_, RecipeCategory p_250588_, ItemLike p_251868_, float p_250789_, int p_252144_, String p_251687_) {

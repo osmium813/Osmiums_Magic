@@ -1,13 +1,13 @@
 {
   "type": "osmiumsmagic:reinforcement",
   "craft_time": 200,
-  "essence": 8,
+  "essence": 4,
   "key": {
     "X": {
       "item": "minecraft:diamond"
     },
     "Y": {
-      "item": "irons_spellbooks:arcane_essence"
+      "item": "irons_spellbooks:arcane_ingot"
     },
     "Z": {
       "item": "irons_spellbooks:mana_ring"
