@@ -50,7 +50,8 @@ public class OsmiumsmagicMain {
     };
 
     public static final Item[] material = {
-            ModItems.MANA_INGOT.get()
+            ModItems.MANA_INGOT.get(),
+            ModItems.MANA_CRYSTAR.get()
     };
 
     public static final Block[] block = {

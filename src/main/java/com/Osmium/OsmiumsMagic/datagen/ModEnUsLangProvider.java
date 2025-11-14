@@ -18,6 +18,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
         add("itemGroup.osmium_magic_blocks", "Osmium's Magic Blocks");
 
         addItem(ModItems.MANA_INGOT, "Mana Ingot");
+        addItem(ModItems.MANA_CRYSTAR, "Mana Crystar");
 
         addItem(ModItems.MANA_RING_TIER_ONE, "Ring of Mana(Tier Ⅰ)");
         addItem(ModItems.MANA_RING_TIER_TWO, "Ring of Mana(Tier Ⅱ)");

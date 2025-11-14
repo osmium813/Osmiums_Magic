@@ -102,5 +102,7 @@ public class ModItems {
     );
 
     public static final RegistryObject<Item> MANA_INGOT = ITEMS.register("mana_ingot", () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON).fireResistant()));
+    public static final RegistryObject<Item> MANA_CRYSTAR = ITEMS.register("mana_crystar", () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON).fireResistant()));
+
 
 }

@@ -2,6 +2,7 @@ package com.Osmium.OsmiumsMagic.datagen;
 
 import com.Osmium.OsmiumsMagic.Main.Osmiumsmagic;
 import com.Osmium.OsmiumsMagic.recipe.ReinforcementRecipeBuilder;
+import com.Osmium.OsmiumsMagic.regi.ModBlocks;
 import com.Osmium.OsmiumsMagic.regi.ModItems;
 import io.redspace.ironsspellbooks.registries.ItemRegistry;
 import net.minecraft.data.PackOutput;
@@ -69,6 +70,27 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('X', Items.GOLD_INGOT)
                 .crafttime(200)
                 .needessence(4)
+                .unlockedBy(getHasName(ItemRegistry.ARCANE_INGOT.get()), has(ItemRegistry.ARCANE_INGOT.get()))
+                .save(pWriter);
+
+        ReinforcementRecipeBuilder.reinforcement(RecipeCategory.MISC, ModItems.MANA_CRYSTAR.get())
+                .pattern(" Y ")
+                .pattern("YZY")
+                .pattern(" Y ")
+                .define('Z', Items.AMETHYST_CLUSTER)
+                .define('Y', ItemRegistry.ARCANE_SALVAGE.get())
+                .crafttime(200)
+                .needessence(4)
+                .unlockedBy(getHasName(ItemRegistry.ARCANE_SALVAGE.get()), has(ItemRegistry.ARCANE_INGOT.get()))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.REINFORCEMENT_TABLE.get())
+                .pattern("XYX")
+                .pattern("YZY")
+                .pattern("XYX")
+                .define('X', Items.QUARTZ_BLOCK)
+                .define('Y', ItemRegistry.ARCANE_INGOT.get())
+                .define('Z', Items.ENCHANTING_TABLE)
                 .unlockedBy(getHasName(ItemRegistry.ARCANE_INGOT.get()), has(ItemRegistry.ARCANE_INGOT.get()))
                 .save(pWriter);
     }
