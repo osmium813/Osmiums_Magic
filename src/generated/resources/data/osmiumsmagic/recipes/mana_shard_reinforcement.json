@@ -1,0 +1,21 @@
+{
+  "type": "osmiumsmagic:reinforcement",
+  "craft_time": 200,
+  "essence": 4,
+  "key": {
+    "Y": {
+      "item": "irons_spellbooks:magic_cloth"
+    },
+    "Z": {
+      "item": "minecraft:amethyst_shard"
+    }
+  },
+  "pattern": [
+    " Y ",
+    "YZY",
+    " Y "
+  ],
+  "result": {
+    "item": "osmiumsmagic:mana_shard"
+  }
+}

@@ -18,7 +18,7 @@ public class ModJAJPLangProvider extends LanguageProvider {
         add("itemGroup.osmium_magic_blocks", "Osmium's Magic ブロック");
 
         addItem(ModItems.MANA_INGOT, "マナインゴット");
-        addItem(ModItems.MANA_CRYSTAR, "マナクリスタル");
+        addItem(ModItems.MANA_SHARD, "マナクリスタル");
 
 
         addItem(ModItems.MANA_RING_TIER_ONE, "マナのリング(Tier　Ⅰ)");

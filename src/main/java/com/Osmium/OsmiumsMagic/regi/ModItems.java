@@ -101,8 +101,8 @@ public class ModItems {
             AttributeRegistry.COOLDOWN_REDUCTION.get(),  new AttributeModifier("cd", 0.4, AttributeModifier.Operation.MULTIPLY_BASE), AttributeRegistry.CAST_TIME_REDUCTION.get(), new AttributeModifier("ct", 0.4, AttributeModifier.Operation.MULTIPLY_BASE))
     );
 
-    public static final RegistryObject<Item> MANA_INGOT = ITEMS.register("mana_ingot", () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON).fireResistant()));
-    public static final RegistryObject<Item> MANA_CRYSTAR = ITEMS.register("mana_crystar", () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON).fireResistant()));
+    public static final RegistryObject<Item> MANA_INGOT = ITEMS.register("mana_ingot", () -> new Item(new Item.Properties().rarity(Rarity.COMMON).fireResistant()));
+    public static final RegistryObject<Item> MANA_SHARD = ITEMS.register("mana_shard", () -> new Item(new Item.Properties().rarity(Rarity.COMMON).fireResistant()));
 
 
 }

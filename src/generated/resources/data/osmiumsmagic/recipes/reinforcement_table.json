@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "X": {
+      "item": "minecraft:quartz_block"
+    },
+    "Y": {
+      "item": "irons_spellbooks:arcane_ingot"
+    },
+    "Z": {
+      "item": "minecraft:enchanting_table"
+    }
+  },
+  "pattern": [
+    "XYX",
+    "YZY",
+    "XYX"
+  ],
+  "result": {
+    "item": "osmiumsmagic:reinforcement_table"
+  },
+  "show_notification": true
+}

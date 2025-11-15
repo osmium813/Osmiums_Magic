@@ -58,7 +58,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         curioItem(ModItems.MANA_COOLDOWN_CAST_TIME_RING_TIER_FIVE);
 
         simpleItem(ModItems.MANA_INGOT);
-        simpleItem(ModItems.MANA_CRYSTAR);
+        simpleItem(ModItems.MANA_SHARD);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

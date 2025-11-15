@@ -73,17 +73,55 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ItemRegistry.ARCANE_INGOT.get()), has(ItemRegistry.ARCANE_INGOT.get()))
                 .save(pWriter);
 
-        ReinforcementRecipeBuilder.reinforcement(RecipeCategory.MISC, ModItems.MANA_CRYSTAR.get())
+        ReinforcementRecipeBuilder.reinforcement(RecipeCategory.MISC, ModItems.MANA_SHARD.get())
                 .pattern(" Y ")
                 .pattern("YZY")
                 .pattern(" Y ")
-                .define('Z', Items.AMETHYST_CLUSTER)
-                .define('Y', ItemRegistry.ARCANE_SALVAGE.get())
+                .define('Z', Items.AMETHYST_SHARD)
+                .define('Y', ItemRegistry.MAGIC_CLOTH.get())
                 .crafttime(200)
                 .needessence(4)
-                .unlockedBy(getHasName(ItemRegistry.ARCANE_SALVAGE.get()), has(ItemRegistry.ARCANE_INGOT.get()))
+                .unlockedBy(getHasName(ItemRegistry.MAGIC_CLOTH.get()), has(ItemRegistry.MAGIC_CLOTH.get()))
                 .save(pWriter);
 
+
+        ReinforcementRecipeBuilder.reinforcement(RecipeCategory.MISC, ModItems.MANA_RING_TIER_TWO.get())
+                .pattern("XYX")
+                .pattern("YZY")
+                .pattern("XYX")
+                .define('X', ModItems.MANA_SHARD.get())
+                .define('Y', ModItems.MANA_INGOT.get())
+                .define('Z', ModItems.MANA_RING_TIER_ONE.get())
+                .crafttime(300)
+                .needessence(8)
+                .unlockedBy(getHasName(ModItems.MANA_RING_TIER_ONE.get()), has(ModItems.MANA_RING_TIER_ONE.get()))
+                .save(pWriter);
+
+        ReinforcementRecipeBuilder.reinforcement(RecipeCategory.MISC, ModItems.COOLDOWN_RING_TIER_TWO.get())
+                .pattern("XYX")
+                .pattern("YZY")
+                .pattern("XYX")
+                .define('X', ModItems.MANA_SHARD.get())
+                .define('Y', ModItems.MANA_INGOT.get())
+                .define('Z', ModItems.COOLDOWN_RING_TIER_ONE.get())
+                .crafttime(300)
+                .needessence(8)
+                .unlockedBy(getHasName(ModItems.COOLDOWN_RING_TIER_ONE.get()), has(ModItems.COOLDOWN_RING_TIER_ONE.get()))
+                .save(pWriter);
+
+        ReinforcementRecipeBuilder.reinforcement(RecipeCategory.MISC, ModItems.CAST_TIME_RING_TIER_TWO.get())
+                .pattern("XYX")
+                .pattern("YZY")
+                .pattern("XYX")
+                .define('X', ModItems.MANA_SHARD.get())
+                .define('Y', ModItems.MANA_INGOT.get())
+                .define('Z', ModItems.CAST_TIME_RING_TIER_ONE.get())
+                .crafttime(300)
+                .needessence(8)
+                .unlockedBy(getHasName(ModItems.CAST_TIME_RING_TIER_ONE.get()), has(ModItems.CAST_TIME_RING_TIER_ONE.get()))
+                .save(pWriter);
+        
+        
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.REINFORCEMENT_TABLE.get())
                 .pattern("XYX")
                 .pattern("YZY")
@@ -94,7 +132,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ItemRegistry.ARCANE_INGOT.get()), has(ItemRegistry.ARCANE_INGOT.get()))
                 .save(pWriter);
     }
-
+    
     protected static void oreSmelting(Consumer<FinishedRecipe> p_250654_, List<ItemLike> p_250172_, RecipeCategory p_250588_, ItemLike p_251868_, float p_250789_, int p_252144_, String p_251687_) {
         oreCooking(p_250654_, RecipeSerializer.SMELTING_RECIPE, p_250172_, p_250588_, p_251868_, p_250789_, p_252144_, p_251687_, "_from_smelting");
     }

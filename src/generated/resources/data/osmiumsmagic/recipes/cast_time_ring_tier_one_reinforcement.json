@@ -1,0 +1,24 @@
+{
+  "type": "osmiumsmagic:reinforcement",
+  "craft_time": 200,
+  "essence": 4,
+  "key": {
+    "X": {
+      "item": "minecraft:diamond"
+    },
+    "Y": {
+      "item": "irons_spellbooks:arcane_ingot"
+    },
+    "Z": {
+      "item": "irons_spellbooks:cast_time_ring"
+    }
+  },
+  "pattern": [
+    "XYX",
+    "YZY",
+    "XYX"
+  ],
+  "result": {
+    "item": "osmiumsmagic:cast_time_ring_tier_one"
+  }
+}
