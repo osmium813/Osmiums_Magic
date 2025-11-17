@@ -1,7 +1,7 @@
 package com.Osmium.OsmiumsMagic.regi;
 
 import com.Osmium.OsmiumsMagic.Main.Osmiumsmagic;
-import com.Osmium.OsmiumsMagic.entity.ReinforcementTableBlockEntity;
+import com.Osmium.OsmiumsMagic.entity.block.ReinforcementTableBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;

@@ -1,6 +1,6 @@
 package com.Osmium.OsmiumsMagic.block;
 
-import com.Osmium.OsmiumsMagic.entity.ReinforcementTableBlockEntity;
+import com.Osmium.OsmiumsMagic.entity.block.ReinforcementTableBlockEntity;
 import com.Osmium.OsmiumsMagic.regi.ModBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;

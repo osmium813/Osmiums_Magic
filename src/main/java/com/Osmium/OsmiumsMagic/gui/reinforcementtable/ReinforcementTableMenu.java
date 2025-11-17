@@ -1,6 +1,6 @@
 package com.Osmium.OsmiumsMagic.gui.reinforcementtable;
 
-import com.Osmium.OsmiumsMagic.entity.ReinforcementTableBlockEntity;
+import com.Osmium.OsmiumsMagic.entity.block.ReinforcementTableBlockEntity;
 import com.Osmium.OsmiumsMagic.regi.ModBlocks;
 import com.Osmium.OsmiumsMagic.regi.ModMenuTypes;
 import net.minecraft.network.FriendlyByteBuf;

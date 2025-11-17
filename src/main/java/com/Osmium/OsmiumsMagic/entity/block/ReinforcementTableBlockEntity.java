@@ -1,4 +1,4 @@
-package com.Osmium.OsmiumsMagic.entity;
+package com.Osmium.OsmiumsMagic.entity.block;
 
 import com.Osmium.OsmiumsMagic.gui.reinforcementtable.ReinforcementTableMenu;
 import com.Osmium.OsmiumsMagic.recipe.ReinforcementRecipe;
