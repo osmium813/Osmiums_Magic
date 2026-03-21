@@ -66,6 +66,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
         addItem(ModItems.MANA_COOLDOWN_CAST_TIME_RING_TIER_FOUR, "Ring of Mana, Recovery and Expediency(Tier Ⅳ)");
         addItem(ModItems.MANA_COOLDOWN_CAST_TIME_RING_TIER_FIVE, "Ring of Mana, Recovery and Expediency(Tier Ⅴ)");
 
+        addItem(ModItems.MANA_SALVAGE, "Mana Salvage");
+
         addBlock(ModBlocks.REINFORCEMENT_TABLE, "Reinforcement Table");
     }
 }

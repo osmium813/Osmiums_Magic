@@ -189,7 +189,18 @@ public class ReinforcementTableBlockEntity extends BlockEntity implements MenuPr
                 .getAllRecipesFor(ReinforcementRecipe.Type.INSTANCE)
                 .stream()
                 .anyMatch(recipe -> recipe.matches(inv, level)
-                        && essencecount >= recipe.getEssenceCost());
+                        && essencecount >= recipe.getEssenceCost()
+                        && canInsertAmountIntoOutput(recipe.getResultItem(level.registryAccess())));
+    }
+
+    private boolean canInsertAmountIntoOutput(ItemStack result) {
+        ItemStack output = itemHandler.getStackInSlot(OUTPUT_SLOT);
+
+        if (output.isEmpty()) return true;
+
+        if (!ItemStack.isSameItemSameTags(output, result)) return false;
+
+        return output.getCount() + result.getCount() <= output.getMaxStackSize();
     }
 
     private void craftItem() {
@@ -214,7 +225,22 @@ public class ReinforcementTableBlockEntity extends BlockEntity implements MenuPr
 
         // 完成品のセット
         ItemStack result = recipe.getResultItem(level.registryAccess()).copy();
-        itemHandler.setStackInSlot(OUTPUT_SLOT, result);
+
+        ItemStack outputStack = itemHandler.getStackInSlot(OUTPUT_SLOT);
+
+        if (outputStack.isEmpty()) {
+            itemHandler.setStackInSlot(OUTPUT_SLOT, result);
+        } else if (ItemStack.isSameItemSameTags(outputStack, result)) {
+            int newCount = outputStack.getCount() + result.getCount();
+
+            if (newCount <= outputStack.getMaxStackSize()) {
+                outputStack.setCount(newCount);
+            } else {
+                return; // 溢れるならクラフトしない
+            }
+        } else {
+            return; // 別アイテムが入ってるならクラフトしない
+        }
 
         // 消費処理
         essencecount -= recipe.getEssenceCost();

@@ -3,6 +3,7 @@ package com.Osmium.OsmiumsMagic.gui.reinforcementtable;
 import com.Osmium.OsmiumsMagic.entity.block.ReinforcementTableBlockEntity;
 import com.Osmium.OsmiumsMagic.regi.ModBlocks;
 import com.Osmium.OsmiumsMagic.regi.ModMenuTypes;
+import io.redspace.ironsspellbooks.registries.ItemRegistry;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -11,7 +12,9 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
+import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
+import org.jetbrains.annotations.NotNull;
 
 public class ReinforcementTableMenu extends AbstractContainerMenu {
     public final ReinforcementTableBlockEntity blockEntity;
@@ -20,6 +23,17 @@ public class ReinforcementTableMenu extends AbstractContainerMenu {
 
     public ReinforcementTableMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData) {
         this(pContainerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(4));
+    }
+
+    public class InputSlot extends SlotItemHandler {
+        public InputSlot(IItemHandler handler, int index, int x, int y) {
+            super(handler, index, x, y);
+        }
+
+        @Override
+        public boolean mayPlace(@NotNull ItemStack stack) {
+            return true;
+        }
     }
 
     public ReinforcementTableMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
@@ -33,17 +47,27 @@ public class ReinforcementTableMenu extends AbstractContainerMenu {
         addPlayerHotbar(inv);
 
         this.blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(iItemHandler -> {
-            this.addSlot(new SlotItemHandler(iItemHandler, 0, 20,12));
-            this.addSlot(new SlotItemHandler(iItemHandler, 1, 44,6));
-            this.addSlot(new SlotItemHandler(iItemHandler, 2, 67,12));
-            this.addSlot(new SlotItemHandler(iItemHandler, 3, 15,35));
-            this.addSlot(new SlotItemHandler(iItemHandler, 4, 44,35));
-            this.addSlot(new SlotItemHandler(iItemHandler, 5, 73,35));
-            this.addSlot(new SlotItemHandler(iItemHandler, 6, 20,58));
-            this.addSlot(new SlotItemHandler(iItemHandler, 7, 44,64));
-            this.addSlot(new SlotItemHandler(iItemHandler, 8, 67,58));
-            this.addSlot(new SlotItemHandler(iItemHandler, 9, 126,35));
-            this.addSlot(new SlotItemHandler(iItemHandler, 10, 134,64));
+            this.addSlot(new InputSlot(iItemHandler, 0, 20,12));
+            this.addSlot(new InputSlot(iItemHandler, 1, 44,6));
+            this.addSlot(new InputSlot(iItemHandler, 2, 67,12));
+            this.addSlot(new InputSlot(iItemHandler, 3, 15,35));
+            this.addSlot(new InputSlot(iItemHandler, 4, 44,35));
+            this.addSlot(new InputSlot(iItemHandler, 5, 73,35));
+            this.addSlot(new InputSlot(iItemHandler, 6, 20,58));
+            this.addSlot(new InputSlot(iItemHandler, 7, 44,64));
+            this.addSlot(new InputSlot(iItemHandler, 8, 67,58));
+            this.addSlot(new SlotItemHandler(iItemHandler, 9, 126,35) {
+                @Override
+                public boolean mayPlace(@NotNull ItemStack stack) {
+                    return false;
+                }
+            });
+            this.addSlot(new SlotItemHandler(iItemHandler, 10, 134,64){
+                @Override
+                public boolean mayPlace(@NotNull ItemStack stack) {
+                    return stack.getItem() == ItemRegistry.ARCANE_ESSENCE.get();
+                }
+            });
         });
 
         this.addDataSlots(data);
@@ -61,34 +85,47 @@ public class ReinforcementTableMenu extends AbstractContainerMenu {
     private static final int TE_INVENTORY_SLOT_COUNT = 11;
 
     @Override
-    public ItemStack quickMoveStack(Player playerIn, int pIndex) {
-        Slot sourceSlot = slots.get(pIndex);
-        if (sourceSlot == null || !sourceSlot.hasItem()) return ItemStack.EMPTY;
-        ItemStack sourceStack = sourceSlot.getItem();
-        ItemStack copyOfSourceStack = sourceStack.copy();
+    public ItemStack quickMoveStack(Player player, int index) {
+        Slot sourceSlot = slots.get(index);
+        if (!sourceSlot.hasItem()) return ItemStack.EMPTY;
 
-        if (pIndex < VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT) {
-            if (!moveItemStackTo(sourceStack, TE_INVENTORY_FIRST_SLOT_INDEX, TE_INVENTORY_FIRST_SLOT_INDEX
-                + TE_INVENTORY_SLOT_COUNT, false)) {
+        ItemStack sourceStack = sourceSlot.getItem();
+        ItemStack copy = sourceStack.copy();
+
+        // プレイヤー → ブロック
+        if (index < VANILLA_SLOT_COUNT) {
+
+            // エッセンスなら専用スロットへ
+            if (sourceStack.getItem() == ItemRegistry.ARCANE_ESSENCE.get()) {
+                if (!moveItemStackTo(sourceStack, TE_INVENTORY_FIRST_SLOT_INDEX + 10,
+                        TE_INVENTORY_FIRST_SLOT_INDEX + 11, false)) {
+                    return ItemStack.EMPTY;
+                }
+            } else {
+                // 入力スロット(0〜8)のみに入れる
+                if (!moveItemStackTo(sourceStack, TE_INVENTORY_FIRST_SLOT_INDEX,
+                        TE_INVENTORY_FIRST_SLOT_INDEX + 9, false)) {
+                    return ItemStack.EMPTY;
+                }
+            }
+
+        }
+        // ブロック → プレイヤー
+        else {
+            if (!moveItemStackTo(sourceStack, 0, VANILLA_SLOT_COUNT, false)) {
                 return ItemStack.EMPTY;
             }
-        } else if (pIndex < TE_INVENTORY_FIRST_SLOT_INDEX + TE_INVENTORY_SLOT_COUNT) {
-            if (!moveItemStackTo(sourceStack, VANILLA_FIRST_SLOT_INDEX, VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT, false)) {
-                return ItemStack.EMPTY;
-            }
-        } else {
-            System.out.println("Invalid slotIndex:" + pIndex);
-            return ItemStack.EMPTY;
         }
 
-        if (sourceStack.getCount() == 0) {
+        if (sourceStack.isEmpty()) {
             sourceSlot.set(ItemStack.EMPTY);
         } else {
             sourceSlot.setChanged();
         }
-        sourceSlot.onTake(playerIn, sourceStack);
-        return copyOfSourceStack;
-}
+
+        sourceSlot.onTake(player, sourceStack);
+        return copy;
+    }
     @Override
     public boolean stillValid(Player player) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),

@@ -75,6 +75,12 @@ public class ReinforcementCategory implements IRecipeCategory<ReinforcementRecip
 
     }
 
+    // 共通定数にするのがベスト
+    private static final int BAR_X = 152;
+    private static final int BAR_Y = 4;
+    private static final int BAR_WIDTH = 17;
+    private static final int BAR_HEIGHT = 76;
+
     @Override
     public void draw(ReinforcementRecipe recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY) {
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
@@ -91,8 +97,8 @@ public class ReinforcementCategory implements IRecipeCategory<ReinforcementRecip
         int texHeight = 76;
 
         // JEI表示上の位置（ReinforcementScreenのGUI位置に合わせる）
-        int drawX = 152;
-        int drawYBottom = 80;
+        int drawX = BAR_X;
+        int drawYBottom = BAR_Y + BAR_HEIGHT;
 
         // 実際のゲージ高さを計算
         int filled = (essence * texHeight) / maxEssence;
@@ -106,16 +112,12 @@ public class ReinforcementCategory implements IRecipeCategory<ReinforcementRecip
 
     @Override
     public @NotNull List<Component> getTooltipStrings(ReinforcementRecipe recipe, IRecipeSlotsView recipeSlotsView, double mouseX, double mouseY) {
-        // JEI内のエッセンスゲージの当たり判定
-        int barX = 104;
-        int barY = 4;
-        int barWidth = 16;
-        int barHeight = 76;
+            if (mouseX >= BAR_X && mouseX <= BAR_X + BAR_WIDTH &&
+                    mouseY >= BAR_Y && mouseY <= BAR_Y + BAR_HEIGHT) {
 
-        if (mouseX >= barX && mouseX <= barX + barWidth && mouseY >= barY && mouseY <= barY + barHeight) {
-            return List.of(Component.literal("必要エッセンス: " + recipe.getEssenceCost()));
-        }
+                return List.of(Component.literal("必要エッセンス: " + recipe.getEssenceCost()));
+            }
 
-        return List.of();
-    }
+            return List.of();
+            }
 }

@@ -67,6 +67,8 @@ public class ModJAJPLangProvider extends LanguageProvider {
         addItem(ModItems.MANA_COOLDOWN_CAST_TIME_RING_TIER_FOUR, "マナと回復と利便のリング(Tier Ⅳ)");
         addItem(ModItems.MANA_COOLDOWN_CAST_TIME_RING_TIER_FIVE, "マナと回復と利便のリング(Tier Ⅴ)");
 
+        addItem(ModItems.MANA_SALVAGE, "マナの廃材");
+
         addBlock(ModBlocks.REINFORCEMENT_TABLE, "強化台");
     }
 }

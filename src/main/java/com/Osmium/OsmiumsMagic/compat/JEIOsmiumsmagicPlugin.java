@@ -39,4 +39,6 @@ public class JEIOsmiumsmagicPlugin implements IModPlugin {
         registration.addRecipeClickArea(ReinforcementTableScreen.class, 93, 42, 20, 30,
                 ReinforcementCategory.REINFORCEMENT_RECIPE_TYPE);
     }
+
+
 }

@@ -59,6 +59,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleItem(ModItems.MANA_INGOT);
         simpleItem(ModItems.MANA_SHARD);
+        simpleItem(ModItems.MANA_SALVAGE);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
