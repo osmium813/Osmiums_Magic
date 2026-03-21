@@ -1,0 +1,24 @@
+{
+  "type": "osmiumsmagic:reinforcement",
+  "craft_time": 300,
+  "essence": 12,
+  "key": {
+    "X": {
+      "item": "osmiumsmagic:mana_shard"
+    },
+    "Y": {
+      "item": "osmiumsmagic:mana_ingot"
+    },
+    "Z": {
+      "item": "osmiumsmagic:cast_time_ring_tier_two"
+    }
+  },
+  "pattern": [
+    "XYX",
+    "YZY",
+    "XYX"
+  ],
+  "result": {
+    "item": "osmiumsmagic:cast_time_ring_tier_three"
+  }
+}

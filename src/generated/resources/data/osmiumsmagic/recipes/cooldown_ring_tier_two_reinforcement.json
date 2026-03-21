@@ -1,0 +1,24 @@
+{
+  "type": "osmiumsmagic:reinforcement",
+  "craft_time": 300,
+  "essence": 8,
+  "key": {
+    "X": {
+      "item": "osmiumsmagic:mana_shard"
+    },
+    "Y": {
+      "item": "irons_spellbooks:arcane_ingot"
+    },
+    "Z": {
+      "item": "osmiumsmagic:cooldown_ring_tier_one"
+    }
+  },
+  "pattern": [
+    "XYX",
+    "YZY",
+    "XYX"
+  ],
+  "result": {
+    "item": "osmiumsmagic:cooldown_ring_tier_two"
+  }
+}
