@@ -12,8 +12,8 @@ public class ModTags {
 
     public static class Blocks{
 
-    private static TagKey<Block> tag (String name){
-        return BlockTags.create(new ResourceLocation(Osmiumsmagic.MOD_ID,name));
+        private static TagKey<Block> tag (String name){
+            return BlockTags.create(new ResourceLocation(Osmiumsmagic.MOD_ID,name));
     }
 }
 

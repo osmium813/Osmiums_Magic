@@ -59,7 +59,6 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 .add(ModItems.MANA_COOLDOWN_CAST_TIME_RING_TIER_TWO.get())
                 .add(ModItems.MANA_COOLDOWN_CAST_TIME_RING_TIER_THREE.get())
                 .add(ModItems.MANA_COOLDOWN_CAST_TIME_RING_TIER_FOUR.get())
-                .add(ModItems.MANA_COOLDOWN_CAST_TIME_RING_TIER_FIVE.get())
-        ;
+                .add(ModItems.MANA_COOLDOWN_CAST_TIME_RING_TIER_FIVE.get());
     }
 }

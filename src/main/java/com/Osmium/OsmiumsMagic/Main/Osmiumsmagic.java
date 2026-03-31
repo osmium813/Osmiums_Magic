@@ -1,6 +1,7 @@
 package com.Osmium.OsmiumsMagic.Main;
 
 import com.Osmium.OsmiumsMagic.gui.reinforcementtable.ReinforcementTableScreen;
+import com.Osmium.OsmiumsMagic.gui.synthesis_table.SynthesisTableScreen;
 import com.Osmium.OsmiumsMagic.regi.*;
 import com.Osmium.OsmiumsMagic.regi.tab.OsmiumsmagicTabs;
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -37,6 +38,7 @@ public class Osmiumsmagic {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             MenuScreens.register(ModMenuTypes.REINFORCEMENT_TABLE_MANU.get(), ReinforcementTableScreen::new);
+            MenuScreens.register(ModMenuTypes.SYNTHESIS_TABLE_MANU.get(), SynthesisTableScreen::new);
         }
     }
 }

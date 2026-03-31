@@ -1,7 +1,7 @@
 package com.Osmium.OsmiumsMagic.entity.block;
 
-import com.Osmium.OsmiumsMagic.gui.reinforcementtable.ReinforcementTableMenu;
-import com.Osmium.OsmiumsMagic.recipe.ReinforcementRecipe;
+import com.Osmium.OsmiumsMagic.gui.synthesis_table.SynthesisTableMenu;
+import com.Osmium.OsmiumsMagic.recipe.SynthesisRecipe;
 import com.Osmium.OsmiumsMagic.regi.ModBlockEntities;
 import io.redspace.ironsspellbooks.registries.ItemRegistry;
 import net.minecraft.core.BlockPos;
@@ -27,9 +27,9 @@ import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class ReinforcementTableBlockEntity extends BlockEntity implements MenuProvider {
+public class SynthesisTableBlockEntity extends BlockEntity implements MenuProvider {
 
-    private final ItemStackHandler itemHandler = new ItemStackHandler(11){
+    public final ItemStackHandler itemHandler = new ItemStackHandler(12) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -37,7 +37,7 @@ public class ReinforcementTableBlockEntity extends BlockEntity implements MenuPr
 
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
-            if (slot == 10) {
+            if (slot == 11) {
                 return stack.getItem() == ItemRegistry.ARCANE_ESSENCE.get();
             }
             return true;
@@ -53,8 +53,9 @@ public class ReinforcementTableBlockEntity extends BlockEntity implements MenuPr
     private static final int INPUT_SLOT_7 = 6;
     private static final int INPUT_SLOT_8 = 7;
     private static final int INPUT_SLOT_9 = 8;
-    private static final int OUTPUT_SLOT = 9;
-    private static final int INPUT_ESSENCE_SLOT = 10;
+    private static final int INPUT_SLOT_10 = 9;
+    private static final int OUTPUT_SLOT = 10;
+    private static final int INPUT_ESSENCE_SLOT = 11;
 
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
     private ContainerData data;
@@ -64,17 +65,17 @@ public class ReinforcementTableBlockEntity extends BlockEntity implements MenuPr
     private int progress = 0;
     private int maxProgress;
 
-    public ReinforcementTableBlockEntity(BlockPos p_155229_, BlockState p_155230_) {
-        super(ModBlockEntities.REINFORCEMENT_TABLE_BE.get(), p_155229_, p_155230_);
+    public SynthesisTableBlockEntity(BlockPos p_155229_, BlockState p_155230_) {
+        super(ModBlockEntities.SYNTHESIS_TABLE_BE.get(), p_155229_, p_155230_);
 
         this.data = new ContainerData() {
             @Override
             public int get(int pIndex) {
-                return switch (pIndex){
-                    case 0 -> ReinforcementTableBlockEntity.this.essencecount;
-                    case 1 -> ReinforcementTableBlockEntity.this.maxEssenceCount;
-                    case 2 -> ReinforcementTableBlockEntity.this.progress;
-                    case 3 -> ReinforcementTableBlockEntity.this.maxProgress;
+                return switch (pIndex) {
+                    case 0 -> SynthesisTableBlockEntity.this.essencecount;
+                    case 1 -> SynthesisTableBlockEntity.this.maxEssenceCount;
+                    case 2 -> SynthesisTableBlockEntity.this.progress;
+                    case 3 -> SynthesisTableBlockEntity.this.maxProgress;
                     default -> 0;
                 };
             }
@@ -82,10 +83,10 @@ public class ReinforcementTableBlockEntity extends BlockEntity implements MenuPr
             @Override
             public void set(int pIndex, int pValue) {
                 switch (pIndex) {
-                    case 0 -> ReinforcementTableBlockEntity.this.essencecount = pValue;
-                    case 1 -> ReinforcementTableBlockEntity.this.maxEssenceCount = pValue;
-                    case 2 -> ReinforcementTableBlockEntity.this.progress = pValue;
-                    case 3 -> ReinforcementTableBlockEntity.this.maxProgress = pValue;
+                    case 0 -> SynthesisTableBlockEntity.this.essencecount = pValue;
+                    case 1 -> SynthesisTableBlockEntity.this.maxEssenceCount = pValue;
+                    case 2 -> SynthesisTableBlockEntity.this.progress = pValue;
+                    case 3 -> SynthesisTableBlockEntity.this.maxProgress = pValue;
                 }
             }
 
@@ -95,6 +96,7 @@ public class ReinforcementTableBlockEntity extends BlockEntity implements MenuPr
             }
         };
     }
+
 
     @Override
     public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
@@ -119,7 +121,7 @@ public class ReinforcementTableBlockEntity extends BlockEntity implements MenuPr
 
     public void drops() {
         SimpleContainer inventory = new SimpleContainer(itemHandler.getSlots());
-        for (int i = 0; i < itemHandler.getSlots(); i ++) {
+        for (int i = 0; i < itemHandler.getSlots(); i++) {
             inventory.setItem(i, itemHandler.getStackInSlot(i));
         }
         Containers.dropContents(this.level, this.worldPosition, inventory);
@@ -127,19 +129,19 @@ public class ReinforcementTableBlockEntity extends BlockEntity implements MenuPr
 
     @Override
     public Component getDisplayName() {
-        return Component.translatable("block.osmiumsmagic.reinforcement_table");
+        return Component.translatable("block.osmiumsmagic.synthesis_table");
     }
 
     @Override
     public @Nullable AbstractContainerMenu createMenu(int containerId, Inventory playerInventory, Player player) {
-        return new ReinforcementTableMenu(containerId, playerInventory, this, this.data);
+        return new SynthesisTableMenu(containerId, playerInventory, this, this.data);
     }
 
     @Override
     protected void saveAdditional(CompoundTag tag) {
         tag.put("inventory", itemHandler.serializeNBT());
-        tag.putInt("reinforcement_table.essencecount", essencecount);
-        tag.putInt("reinforcement_table.progress", progress);
+        tag.putInt("synthesis_table.essencecount", essencecount);
+        tag.putInt("synthesis_table.progress", progress);
 
         super.saveAdditional(tag);
     }
@@ -148,8 +150,8 @@ public class ReinforcementTableBlockEntity extends BlockEntity implements MenuPr
     public void load(CompoundTag tag) {
         super.load(tag);
         itemHandler.deserializeNBT(tag.getCompound("inventory"));
-        essencecount = tag.getInt("reinforcement_table.essencecount");
-        progress = tag.getInt("reinforcement_table.progress");
+        essencecount = tag.getInt("synthesis_table.essencecount");
+        progress = tag.getInt("synthesis_table.progress");
     }
 
     public void tick(Level level, BlockPos pos, BlockState state) {
@@ -186,7 +188,7 @@ public class ReinforcementTableBlockEntity extends BlockEntity implements MenuPr
         }
 
         return level.getRecipeManager()
-                .getAllRecipesFor(ReinforcementRecipe.Type.INSTANCE)
+                .getAllRecipesFor(SynthesisRecipe.Type.INSTANCE)
                 .stream()
                 .anyMatch(recipe -> recipe.matches(inv, level)
                         && essencecount >= recipe.getEssenceCost()
@@ -212,14 +214,14 @@ public class ReinforcementTableBlockEntity extends BlockEntity implements MenuPr
         }
 
         var optionalRecipe = level.getRecipeManager()
-                .getAllRecipesFor(ReinforcementRecipe.Type.INSTANCE)
+                .getAllRecipesFor(SynthesisRecipe.Type.INSTANCE)
                 .stream()
                 .filter(recipe -> recipe.matches(inv, level))
                 .findFirst();
 
         if (optionalRecipe.isEmpty()) return;
 
-        ReinforcementRecipe recipe = optionalRecipe.get();
+        SynthesisRecipe recipe = optionalRecipe.get();
 
         if (essencecount < recipe.getEssenceCost()) return;
 
@@ -246,7 +248,7 @@ public class ReinforcementTableBlockEntity extends BlockEntity implements MenuPr
         essencecount -= recipe.getEssenceCost();
 
         // 素材の消費（1個ずつ）
-        for (int i = 0; i < 9; i++) {
+        for (int i = 0; i < 10; i++) {
             itemHandler.getStackInSlot(i).shrink(1);
         }
 
@@ -258,7 +260,7 @@ public class ReinforcementTableBlockEntity extends BlockEntity implements MenuPr
         return !stack.isEmpty() && stack.getItem() == ItemRegistry.ARCANE_ESSENCE.get();
     }
 
-    private void reduceEssence(){
+    private void reduceEssence() {
         ItemStack stack = itemHandler.getStackInSlot(INPUT_ESSENCE_SLOT);
         stack.shrink(1);
         itemHandler.setStackInSlot(INPUT_ESSENCE_SLOT, stack);
@@ -291,14 +293,14 @@ public class ReinforcementTableBlockEntity extends BlockEntity implements MenuPr
 
         // レシピマネージャーから現在の入力にマッチするレシピを探す
         var optionalRecipe = level.getRecipeManager()
-                .getAllRecipesFor(ReinforcementRecipe.Type.INSTANCE)
+                .getAllRecipesFor(SynthesisRecipe.Type.INSTANCE)
                 .stream()
                 .filter(recipe -> recipe.matches(inv, level))
                 .findFirst();
 
         // レシピが見つかったら、そのクラフト時間をmaxProgressに設定
         if (optionalRecipe.isPresent()) {
-            ReinforcementRecipe recipe = optionalRecipe.get();
+            SynthesisRecipe recipe = optionalRecipe.get();
             this.maxProgress = recipe.getCraftTime(); // ← JSONの"craft_time"がここに反映される！
         } else {
             this.maxProgress = 0; // 該当レシピがなければ0にリセット

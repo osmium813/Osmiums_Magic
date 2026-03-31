@@ -55,6 +55,7 @@ public class OsmiumsmagicMain {
     };
 
     public static final Block[] block = {
-        ModBlocks.REINFORCEMENT_TABLE.get()
+            ModBlocks.REINFORCEMENT_TABLE.get(),
+            ModBlocks.SYNTHESIS_TABLE.get(),
     };
 }

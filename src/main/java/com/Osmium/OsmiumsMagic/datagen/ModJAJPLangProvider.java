@@ -70,5 +70,6 @@ public class ModJAJPLangProvider extends LanguageProvider {
         addItem(ModItems.MANA_SALVAGE, "マナの廃材");
 
         addBlock(ModBlocks.REINFORCEMENT_TABLE, "強化台");
+        addBlock(ModBlocks.SYNTHESIS_TABLE, "合成台");
     }
 }

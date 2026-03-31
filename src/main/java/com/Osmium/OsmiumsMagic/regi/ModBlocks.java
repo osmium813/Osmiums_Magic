@@ -2,6 +2,7 @@ package com.Osmium.OsmiumsMagic.regi;
 
 import com.Osmium.OsmiumsMagic.Main.Osmiumsmagic;
 import com.Osmium.OsmiumsMagic.block.ReinforcementTable;
+import com.Osmium.OsmiumsMagic.block.SynthesisTable;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -18,6 +19,7 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, Osmiumsmagic.MOD_ID);
 
     public static final RegistryObject<ReinforcementTable> REINFORCEMENT_TABLE = registerBlock("reinforcement_table", ReinforcementTable::new);
+    public static final RegistryObject<SynthesisTable> SYNTHESIS_TABLE = registerBlock("synthesis_table", SynthesisTable::new);
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
