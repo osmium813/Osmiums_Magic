@@ -1,0 +1,27 @@
+{
+  "type": "osmiumsmagic:synthesis",
+  "craft_time": 500,
+  "essence": 4,
+  "key": {
+    "A": {
+      "item": "irons_spellbooks:mana_ring"
+    },
+    "B": {
+      "item": "irons_spellbooks:cast_time_ring"
+    },
+    "X": {
+      "item": "irons_spellbooks:arcane_ingot"
+    },
+    "Y": {
+      "item": "irons_spellbooks:arcane_salvage"
+    }
+  },
+  "pattern": [
+    "XYX",
+    "YABY",
+    "XYX"
+  ],
+  "result": {
+    "item": "osmiumsmagic:mana_cast_time_ring"
+  }
+}
