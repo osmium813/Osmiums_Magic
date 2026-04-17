@@ -1,40 +1,46 @@
-[313月2026 10:53:16.090] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, C:\Users\tungs\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.3.10, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mod, osmiumsmagic, --all, --output, C:\Users\tungs\Downloads\Osmium's_Magic-Iron's_Spellbooks_Addon_1.20.1\src\generated\resources, --existing, C:\Users\tungs\Downloads\Osmium's_Magic-Iron's_Spellbooks_Addon_1.20.1\src\main\resources]
-[313月2026 10:53:16.103] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.13 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
-[313月2026 10:53:16.258] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
-[313月2026 10:53:16.302] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/tungs/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
-[313月2026 10:53:16.542] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\tungs\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.3.10\7a15037366722893d76a3d0b2e9d1fd13a63a22d\javafmllanguage-1.20.1-47.3.10.jar is missing mods.toml file
-[313月2026 10:53:16.547] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\tungs\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.3.10\e67d9b3451d64ccc812cbbd33c066bd3ebbf2167\lowcodelanguage-1.20.1-47.3.10.jar is missing mods.toml file
-[313月2026 10:53:16.547] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\tungs\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.3.10\2023f9726a509c5ba5a925cac934944066093de8\mclanguage-1.20.1-47.3.10.jar is missing mods.toml file
-[313月2026 10:53:16.554] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\tungs\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.3.10\523aa0cd9a773b2b56268d8689b2fb5c1f072941\fmlcore-1.20.1-47.3.10.jar is missing mods.toml file
-[313月2026 10:53:16.722] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: Found 1 dependencies adding them to mods collection
-[313月2026 10:53:18.042] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
-[313月2026 10:53:18.052] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\tungs\.gradle\caches\forge_gradle\assets, --assetIndex, 5, --mod, osmiumsmagic, --all, --output, C:\Users\tungs\Downloads\Osmium's_Magic-Iron's_Spellbooks_Addon_1.20.1\src\generated\resources, --existing, C:\Users\tungs\Downloads\Osmium's_Magic-Iron's_Spellbooks_Addon_1.20.1\src\main\resources]
-[313月2026 10:53:18.377] [main/INFO] [mixin/]: Remapping refMap caelus.refmap.json using C:\Users\tungs\Downloads\Osmium's_Magic-Iron's_Spellbooks_Addon_1.20.1\build\createSrgToMcp\output.srg
-[313月2026 10:53:18.377] [main/INFO] [mixin/]: Remapping refMap curios.refmap.json using C:\Users\tungs\Downloads\Osmium's_Magic-Iron's_Spellbooks_Addon_1.20.1\build\createSrgToMcp\output.srg
-[313月2026 10:53:18.382] [main/INFO] [mixin/]: Remapping refMap geckolib.refmap.json using C:\Users\tungs\Downloads\Osmium's_Magic-Iron's_Spellbooks_Addon_1.20.1\build\createSrgToMcp\output.srg
-[313月2026 10:53:18.400] [main/INFO] [mixin/]: Remapping refMap player-animation-lib-minecraft_common-refmap.json using C:\Users\tungs\Downloads\Osmium's_Magic-Iron's_Spellbooks_Addon_1.20.1\build\createSrgToMcp\output.srg
-[313月2026 10:53:18.402] [main/INFO] [mixin/]: Remapping refMap irons_spellbooks.refmap.json using C:\Users\tungs\Downloads\Osmium's_Magic-Iron's_Spellbooks_Addon_1.20.1\build\createSrgToMcp\output.srg
-[313月2026 10:53:18.963] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [osmiumsmagic]
-[313月2026 10:53:23.009] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.3.10, for MC 1.20.1 with MCP 20230612.114412
-[313月2026 10:53:23.010] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.3.10 Initialized
-[313月2026 10:53:23.165] [modloading-worker-0/WARN] [software.bernie.geckolib.GeckoLib/]: Minecraft.getInstance() was null, could not register reload listeners
-[313月2026 10:53:23.295] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager...
-[313月2026 10:53:23.302] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager took 3.329 ms
-[313月2026 10:53:23.906] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/tungs/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.10_mapped_official_1.20.1/forge-1.20.1-47.3.10_mapped_official_1.20.1-recomp.jar%23191!/assets/.mcassetsroot' uses unexpected schema
-[313月2026 10:53:23.908] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/tungs/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.10_mapped_official_1.20.1/forge-1.20.1-47.3.10_mapped_official_1.20.1-recomp.jar%23191!/data/.mcassetsroot' uses unexpected schema
-[313月2026 10:53:24.290] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
-[313月2026 10:53:24.335] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 45 ms
-[313月2026 10:53:24.335] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
-[313月2026 10:53:24.367] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 33 ms
-[313月2026 10:53:24.367] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: osmiumsmagic
-[313月2026 10:53:24.408] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: osmiumsmagic finished after 37 ms
-[313月2026 10:53:24.408] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: en_us
-[313月2026 10:53:24.408] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: en_us finished after 2 ms
-[313月2026 10:53:24.412] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: ja_jp
-[313月2026 10:53:24.415] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: ja_jp finished after 9 ms
-[313月2026 10:53:24.415] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:block mod id osmiumsmagic
-[313月2026 10:53:24.424] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:block mod id osmiumsmagic finished after 9 ms
-[313月2026 10:53:24.431] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:item mod id osmiumsmagic
-[313月2026 10:53:24.434] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:item mod id osmiumsmagic finished after 3 ms
-[313月2026 10:53:24.434] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 143 ms
-[313月2026 10:53:24.442] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 78, old count: 64, new count: 79, removed stale: 0, written: 17
+[074月2026 19:36:25.751] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, C:\Users\tungs\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.3.10, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mod, osmiumsmagic, --all, --output, C:\Users\tungs\Downloads\Osmium's_Magic-Iron's_Spellbooks_Addon_1.20.1\src\generated\resources, --existing, C:\Users\tungs\Downloads\Osmium's_Magic-Iron's_Spellbooks_Addon_1.20.1\src\main\resources]
+[074月2026 19:36:25.764] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.13 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
+[074月2026 19:36:25.941] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
+[074月2026 19:36:26.008] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/tungs/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
+[074月2026 19:36:26.354] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\tungs\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.3.10\7a15037366722893d76a3d0b2e9d1fd13a63a22d\javafmllanguage-1.20.1-47.3.10.jar is missing mods.toml file
+[074月2026 19:36:26.357] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\tungs\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.3.10\e67d9b3451d64ccc812cbbd33c066bd3ebbf2167\lowcodelanguage-1.20.1-47.3.10.jar is missing mods.toml file
+[074月2026 19:36:26.359] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\tungs\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.3.10\2023f9726a509c5ba5a925cac934944066093de8\mclanguage-1.20.1-47.3.10.jar is missing mods.toml file
+[074月2026 19:36:26.361] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\tungs\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.3.10\523aa0cd9a773b2b56268d8689b2fb5c1f072941\fmlcore-1.20.1-47.3.10.jar is missing mods.toml file
+[074月2026 19:36:26.655] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: Found 1 dependencies adding them to mods collection
+[074月2026 19:36:28.031] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[074月2026 19:36:28.042] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\tungs\.gradle\caches\forge_gradle\assets, --assetIndex, 5, --mod, osmiumsmagic, --all, --output, C:\Users\tungs\Downloads\Osmium's_Magic-Iron's_Spellbooks_Addon_1.20.1\src\generated\resources, --existing, C:\Users\tungs\Downloads\Osmium's_Magic-Iron's_Spellbooks_Addon_1.20.1\src\main\resources]
+[074月2026 19:36:28.320] [main/INFO] [mixin/]: Remapping refMap caelus.refmap.json using C:\Users\tungs\Downloads\Osmium's_Magic-Iron's_Spellbooks_Addon_1.20.1\build\createSrgToMcp\output.srg
+[074月2026 19:36:28.321] [main/INFO] [mixin/]: Remapping refMap curios.refmap.json using C:\Users\tungs\Downloads\Osmium's_Magic-Iron's_Spellbooks_Addon_1.20.1\build\createSrgToMcp\output.srg
+[074月2026 19:36:28.322] [main/INFO] [mixin/]: Remapping refMap geckolib.refmap.json using C:\Users\tungs\Downloads\Osmium's_Magic-Iron's_Spellbooks_Addon_1.20.1\build\createSrgToMcp\output.srg
+[074月2026 19:36:28.333] [main/INFO] [mixin/]: Remapping refMap player-animation-lib-minecraft_common-refmap.json using C:\Users\tungs\Downloads\Osmium's_Magic-Iron's_Spellbooks_Addon_1.20.1\build\createSrgToMcp\output.srg
+[074月2026 19:36:28.334] [main/INFO] [mixin/]: Remapping refMap irons_spellbooks.refmap.json using C:\Users\tungs\Downloads\Osmium's_Magic-Iron's_Spellbooks_Addon_1.20.1\build\createSrgToMcp\output.srg
+[074月2026 19:36:29.052] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [osmiumsmagic]
+[074月2026 19:36:33.044] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.3.10, for MC 1.20.1 with MCP 20230612.114412
+[074月2026 19:36:33.045] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.3.10 Initialized
+[074月2026 19:36:33.212] [modloading-worker-0/WARN] [software.bernie.geckolib.GeckoLib/]: Minecraft.getInstance() was null, could not register reload listeners
+[074月2026 19:36:33.353] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager...
+[074月2026 19:36:33.359] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager took 3.289 ms
+[074月2026 19:36:34.028] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/tungs/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.10_mapped_official_1.20.1/forge-1.20.1-47.3.10_mapped_official_1.20.1-recomp.jar%23191!/assets/.mcassetsroot' uses unexpected schema
+[074月2026 19:36:34.028] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/tungs/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.10_mapped_official_1.20.1/forge-1.20.1-47.3.10_mapped_official_1.20.1-recomp.jar%23191!/data/.mcassetsroot' uses unexpected schema
+[074月2026 19:36:34.331] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
+[074月2026 19:36:34.413] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 81 ms
+[074月2026 19:36:34.413] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
+[074月2026 19:36:34.456] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 43 ms
+[074月2026 19:36:34.456] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: osmiumsmagic
+[074月2026 19:36:34.476] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: osmiumsmagic finished after 18 ms
+[074月2026 19:36:34.476] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: en_us
+[074月2026 19:36:34.476] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: en_us finished after 0 ms
+[074月2026 19:36:34.476] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: ja_jp
+[074月2026 19:36:34.477] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: ja_jp finished after 0 ms
+[074月2026 19:36:34.477] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:block mod id osmiumsmagic
+[074月2026 19:36:34.486] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:block mod id osmiumsmagic finished after 8 ms
+[074月2026 19:36:34.486] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:item mod id osmiumsmagic
+[074月2026 19:36:34.488] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:item mod id osmiumsmagic finished after 1 ms
+[074月2026 19:36:34.488] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Registries
+[074月2026 19:36:34.494] [main/INFO] [net.minecraft.data.DataGenerator/]: Registries finished after 6 ms
+[074月2026 19:36:34.494] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:damage_type mod id osmiumsmagic
+[074月2026 19:36:34.496] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:damage_type mod id osmiumsmagic finished after 2 ms
+[074月2026 19:36:34.497] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Pack Metadata
+[074月2026 19:36:34.502] [main/INFO] [net.minecraft.data.DataGenerator/]: Pack Metadata finished after 4 ms
+[074月2026 19:36:34.502] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 171 ms
+[074月2026 19:36:34.512] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 83, old count: 80, new count: 84, removed stale: 0, written: 3

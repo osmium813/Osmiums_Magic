@@ -45,5 +45,7 @@
   "item.osmiumsmagic.mana_shard": "マナクリスタル",
   "itemGroup.osmium_magic_blocks": "Osmium's Magic ブロック",
   "itemGroup.osmium_magic_items": "Osmium's Magic アイテム",
-  "itemGroup.osmium_magic_ornaments": "Osmium's Magic 装飾品"
+  "itemGroup.osmium_magic_ornaments": "Osmium's Magic 装飾品",
+  "school.osmiumsmagic.curse": "呪い",
+  "spell.osmiumsmagic.cursed_scatter": "カースドスキャター"
 }

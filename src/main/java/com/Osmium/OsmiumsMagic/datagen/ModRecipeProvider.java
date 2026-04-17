@@ -216,6 +216,19 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModItems.MANA_CAST_TIME_RING_TIER_TWO.get()), has(ModItems.MANA_CAST_TIME_RING_TIER_TWO.get()))
                 .save(pWriter);
 
+        ReinforcementRecipeBuilder.reinforcement(RecipeCategory.MISC, ModBlocks.SYNTHESIS_TABLE.get())
+                .pattern("WYW")
+                .pattern("YZY")
+                .pattern("XYX")
+                .define('W', Items.DIAMOND)
+                .define('X', Items.GOLD_BLOCK)
+                .define('Y', ItemRegistry.ARCANE_SALVAGE.get())
+                .define('Z', Items.ENCHANTING_TABLE)
+                .crafttime(500)
+                .needessence(16)
+                .unlockedBy(getHasName(Items.ENCHANTING_TABLE), has(Items.ENCHANTING_TABLE))
+                .save(pWriter);
+
         SynthesisRecipeBuilder.Synthesis(RecipeCategory.MISC, ModItems.MANA_CAST_TIME_RING.get())
                 .pattern("XYX")
                 .pattern("YABY")

@@ -70,5 +70,8 @@ public class ModEnUsLangProvider extends LanguageProvider {
 
         addBlock(ModBlocks.REINFORCEMENT_TABLE, "Reinforcement Table");
         addBlock(ModBlocks.SYNTHESIS_TABLE, "Synthesis Table");
+
+        add("spell.osmiumsmagic.cursed_scatter", "Cursed Scatter");
+        add("school.osmiumsmagic.curse", "Curse");
     }
 }

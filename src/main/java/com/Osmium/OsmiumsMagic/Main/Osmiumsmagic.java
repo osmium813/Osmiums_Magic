@@ -31,6 +31,8 @@ public class Osmiumsmagic {
         ModRecipes.register(bus);
 
         ModSpells.register(bus);
+        ModSchoolRegistry.register(bus);
+        ModAttributes.register(bus);
     }
 
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)

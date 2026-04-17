@@ -60,12 +60,21 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.MANA_INGOT);
         simpleItem(ModItems.MANA_SHARD);
         simpleItem(ModItems.MANA_SALVAGE);
+
+        simpleItem2("scroll_curse");
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(Osmiumsmagic.MOD_ID, "item/" + item.getId().getPath()));
+    }
+
+    private ItemModelBuilder simpleItem2(String location) {
+        return withExistingParent(location,
+                new ResourceLocation("item/generated"))
+                .texture("layer0",
+                        new ResourceLocation(Osmiumsmagic.MOD_ID, "item/" + location));
     }
 
     private ItemModelBuilder curioItem(RegistryObject<? extends Item> item) {

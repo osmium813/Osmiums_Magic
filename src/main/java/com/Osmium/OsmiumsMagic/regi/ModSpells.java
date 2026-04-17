@@ -1,6 +1,7 @@
 package com.Osmium.OsmiumsMagic.regi;
 
 import com.Osmium.OsmiumsMagic.Main.Osmiumsmagic;
+import com.Osmium.OsmiumsMagic.spell.curse.CursedScatterSpell;
 import io.redspace.ironsspellbooks.api.registry.SpellRegistry;
 import io.redspace.ironsspellbooks.api.spells.AbstractSpell;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -18,4 +19,6 @@ public class ModSpells {
         return SPELLS.register(spell.getSpellName(), () -> spell);
     }
 
+    //Curse
+    public static final RegistryObject<AbstractSpell> CURSED_SCATTER_SPELL = registerSpell(new CursedScatterSpell());
 }

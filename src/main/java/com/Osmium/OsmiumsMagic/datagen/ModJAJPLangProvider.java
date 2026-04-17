@@ -71,5 +71,8 @@ public class ModJAJPLangProvider extends LanguageProvider {
 
         addBlock(ModBlocks.REINFORCEMENT_TABLE, "強化台");
         addBlock(ModBlocks.SYNTHESIS_TABLE, "合成台");
+
+        add("spell.osmiumsmagic.cursed_scatter", "カースドスキャター");
+        add("school.osmiumsmagic.curse", "呪い");
     }
 }
