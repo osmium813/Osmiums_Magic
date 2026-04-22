@@ -3,6 +3,7 @@ package com.Osmium.OsmiumsMagic.spell.curse;
 import com.Osmium.OsmiumsMagic.Main.Osmiumsmagic;
 import com.Osmium.OsmiumsMagic.regi.ModDamageTypes;
 import com.Osmium.OsmiumsMagic.regi.ModSchoolRegistry;
+import dev.xkmc.l2complements.init.registrate.LCEffects;
 import io.redspace.ironsspellbooks.api.config.DefaultConfig;
 import io.redspace.ironsspellbooks.api.magic.MagicData;
 import io.redspace.ironsspellbooks.api.spells.*;
@@ -12,16 +13,15 @@ import io.redspace.ironsspellbooks.api.util.CameraShakeManager;
 import io.redspace.ironsspellbooks.api.util.Utils;
 import io.redspace.ironsspellbooks.capabilities.magic.MagicManager;
 import io.redspace.ironsspellbooks.particle.BlastwaveParticleOptions;
-import io.redspace.ironsspellbooks.registries.SoundRegistry;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -58,7 +58,7 @@ public class CursedScatterSpell extends AbstractSpell {
 
     @Override
     public Optional<SoundEvent> getCastStartSound() {
-        return Optional.of(SoundRegistry.HEAT_SURGE_PREPARE.get());
+        return Optional.of(SoundEvents.ELDER_GUARDIAN_CURSE);
     }
 
     @Override
@@ -118,8 +118,7 @@ public class CursedScatterSpell extends AbstractSpell {
 
         int duration = 100 + level * 40; // ticks
 
-        target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, duration, 1));
-        target.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, duration, 1));
+        target.addEffect(new MobEffectInstance(LCEffects.CURSE.get(), duration, 1));
     }
 
     @Override

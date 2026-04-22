@@ -47,5 +47,6 @@
   "itemGroup.osmium_magic_items": "Osmium's Magic Items",
   "itemGroup.osmium_magic_ornaments": "Osmium's Magic Ornaments",
   "school.osmiumsmagic.curse": "Curse",
-  "spell.osmiumsmagic.cursed_scatter": "Cursed Scatter"
+  "spell.osmiumsmagic.cursed_scatter": "Cursed Scatter",
+  "spell.osmiumsmagic.cursed_scatter.guide": "A mid-range area-of-effect attack that inflicts a curse. Damage increases depending on the melee attack power and enchantment effects of the equipped weapon."
 }

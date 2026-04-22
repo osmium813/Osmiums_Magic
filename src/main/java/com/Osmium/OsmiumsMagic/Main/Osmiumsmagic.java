@@ -5,12 +5,14 @@ import com.Osmium.OsmiumsMagic.gui.synthesis_table.SynthesisTableScreen;
 import com.Osmium.OsmiumsMagic.regi.*;
 import com.Osmium.OsmiumsMagic.regi.tab.OsmiumsmagicTabs;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import org.jetbrains.annotations.NotNull;
 
 @Mod("osmiumsmagic")
 public class Osmiumsmagic {
@@ -43,4 +45,9 @@ public class Osmiumsmagic {
             MenuScreens.register(ModMenuTypes.SYNTHESIS_TABLE_MANU.get(), SynthesisTableScreen::new);
         }
     }
+
+    public static ResourceLocation id(@NotNull String path) {
+        return new ResourceLocation(MOD_ID, path);
+    }
+
 }

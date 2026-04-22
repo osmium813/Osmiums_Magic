@@ -1,0 +1,11 @@
+{
+  "required": false,
+  "package": "com.Osmium.OsmiumsMagic.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "osmiumsmagic.refmap.json",
+  "mixins": [],
+  "client": [],
+  "injectors": {
+    "defaultRequire": 0
+  }
+}

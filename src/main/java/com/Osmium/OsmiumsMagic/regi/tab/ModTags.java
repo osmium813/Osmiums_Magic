@@ -21,6 +21,8 @@ public class ModTags {
 
         public static final TagKey<Item> RINGS = ItemTags.create(new ResourceLocation("curios", "ring"));
 
+        public static final TagKey<Item> CURSE_FOCUS = ItemTags.create(new ResourceLocation(Osmiumsmagic.MOD_ID, "curse_focus"));
+
         private static TagKey<Item> tag (String name){
             return ItemTags.create(new ResourceLocation(Osmiumsmagic.MOD_ID,name));
         }

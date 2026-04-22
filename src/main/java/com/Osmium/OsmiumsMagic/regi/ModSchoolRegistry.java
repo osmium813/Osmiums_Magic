@@ -18,19 +18,25 @@ public class ModSchoolRegistry {
     public static final DeferredRegister<SchoolType> SCHOOLS =
             DeferredRegister.create(SchoolRegistry.SCHOOL_REGISTRY_KEY, Osmiumsmagic.MOD_ID);
 
-    public static final RegistryObject<SchoolType> CURSE = SCHOOLS.register("curse", () ->
-            new SchoolType(
-                    new ResourceLocation(Osmiumsmagic.MOD_ID, "curse"),
-                    ModTags.Items.RINGS,
-                    Component.translatable("school.osmiumsmagic.curse")
-                            .withStyle(ChatFormatting.GRAY),
+    private static RegistryObject<SchoolType> registerSchool(SchoolType type)
+    {
+        return SCHOOLS.register(type.getId().getPath(), () -> type);
+    }
 
-                    LazyOptional.of(ModAttributes.CURSE_SPELL_POWER::get),
-                    LazyOptional.of(ModAttributes.CURSE_MAGIC_RESIST::get),
+    public static final ResourceLocation CURSE_RESOURCE = Osmiumsmagic.id("curse");
 
-                    LazyOptional.of(SoundRegistry.ENDER_CAST::get),
-                    ModDamageTypes.CURSE_MAGIC
-            ));
+    public static final RegistryObject<SchoolType> CURSE = registerSchool( new SchoolType(
+            CURSE_RESOURCE,
+            ModTags.Items.CURSE_FOCUS,
+            Component.translatable("school.osmiumsmagic.curse")
+                    .withStyle(ChatFormatting.GRAY),
+
+            LazyOptional.of(ModAttributes.CURSE_SPELL_POWER::get),
+            LazyOptional.of(ModAttributes.CURSE_MAGIC_RESIST::get),
+
+            LazyOptional.of(SoundRegistry.ENDER_CAST::get),
+            ModDamageTypes.CURSE_MAGIC
+    ));
 
     public static void register(IEventBus bus) {
         ;SCHOOLS.register(bus);

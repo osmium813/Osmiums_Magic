@@ -73,5 +73,7 @@ public class ModEnUsLangProvider extends LanguageProvider {
 
         add("spell.osmiumsmagic.cursed_scatter", "Cursed Scatter");
         add("school.osmiumsmagic.curse", "Curse");
+
+        add("spell.osmiumsmagic.cursed_scatter.guide", "A mid-range area-of-effect attack that inflicts a curse. Damage increases depending on the melee attack power and enchantment effects of the equipped weapon.");
     }
 }

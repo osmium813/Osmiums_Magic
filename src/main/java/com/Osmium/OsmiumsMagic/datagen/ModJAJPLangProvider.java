@@ -74,5 +74,7 @@ public class ModJAJPLangProvider extends LanguageProvider {
 
         add("spell.osmiumsmagic.cursed_scatter", "カースドスキャター");
         add("school.osmiumsmagic.curse", "呪い");
+
+        add("spell.osmiumsmagic.cursed_scatter.guide", "呪いを付与する近接範囲攻撃を行う。ダメージは、保持している武器の近接ダメージに比例する");
     }
 }
